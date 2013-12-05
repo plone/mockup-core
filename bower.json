@@ -1,0 +1,11 @@
+{
+  "name": "mockup-core",
+  "version": "1.5.0",
+  "description": "Mockup Core",
+  "dependencies": {
+    "jquery": "1.8.3"
+  },
+  "devDependencies": {
+    "chai": "1.8.1"
+  }
+}

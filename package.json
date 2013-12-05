@@ -1,0 +1,44 @@
+{
+  "name": "mockup-core",
+  "version": "1.5.0",
+  "description": "Mockup Core",
+  "homepage": "http://plone.github.io/mockup",
+  "devDependencies": {
+    "bower": "~1.2.8",
+    "coveralls": "~2.5.0",
+    "grunt-cli": "~0.1.11",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-karma": "~0.7.1",
+    "karma": "~0.10.7",
+    "karma-chrome-launcher": "~0.1.1",
+    "karma-coverage": "~0.1.4",
+    "karma-junit-reporter": "~0.2.1",
+    "karma-mocha": "~0.1.1",
+    "karma-phantomjs-launcher": "~0.1.1",
+    "karma-requirejs": "~0.2.0",
+    "karma-sauce-launcher": "~0.1.5",
+    "karma-script-launcher": "~0.1.0",
+    "lcov-result-merger": "~0.0.2"
+  },
+  "maintainers": [
+    {
+      "name": "Rok Garbas",
+      "email": "rok@garbas.si",
+      "url": "http://garbas.si"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plone/mockup-core.git"
+  },
+  "bugs": {
+    "url": "https://github.com/plone/mockup/issues",
+    "email": "rok@garbas.si"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ]
+}
