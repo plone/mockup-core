@@ -67,7 +67,7 @@ module.exports = function(grunt) {
         },
         sauceLabs: {
           testName: 'MockupCore',
-          startConnect: false
+          startConnect: true
         },
         customLaunchers: {
           'sauce_chrome': {

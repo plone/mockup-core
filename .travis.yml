@@ -1,10 +1,6 @@
 language: node_js
 node_js:
   - 0.10
-addons:
-  sauce_connect:
-    - username: $SAUCE_USERNAME
-    - access_key: $SAUCE_ACCESS_KEY
 install:
   - npm cache clean
   - make bootstrap
