@@ -28,7 +28,7 @@ define([
   'chai',
   'jquery',
   'mockup-registry',
-  'mockup-pattern-base'
+  'mockup-patterns-base'
 ], function(chai, $, Registry, Base) {
   "use strict";
 
