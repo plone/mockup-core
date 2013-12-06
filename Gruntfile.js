@@ -59,32 +59,26 @@ module.exports = function(grunt) {
       },
       test_ci: {
         singleRun: true,
+        port: 8000,
         browsers: ['sauce_chrome', 'sauce_firefox'],
         reporters: ['junit', 'coverage'],
         junitReporter: {
           outputFile: 'test-results.xml'
         },
         sauceLabs: {
-          testName: 'PloneMockup',
-          startConnect: true
+          testName: 'MockupCore',
+          startConnect: false
         },
         customLaunchers: {
           'sauce_chrome': {
              base: 'SauceLabs',
              platform: 'Windows 7',
-             browserName: 'chrome',
-             version: '31'
+             browserName: 'chrome'
            },
           'sauce_firefox': {
              base: 'SauceLabs',
              platform: 'Windows 7',
-             browserName: 'firefox',
-             version: '25'
-           },
-           'sauce_ie': {
-             base: 'SauceLabs',
-             platform: 'Windows 8',
-             browserName: 'internet explorer'
+             browserName: 'firefox'
            }
         }
       }

@@ -22,7 +22,7 @@ test-dev:
 	NODE_PATH=./node_modules $(GRUNT) test_dev --force --pattern=$(pattern)
 
 test-ci:
-	NODE_PATH=./node_modules $(GRUNT) ci
+	NODE_PATH=./node_modules $(GRUNT) test_ci
 
 clean:
 	rm -rf node_modules
