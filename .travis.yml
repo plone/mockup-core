@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - 0.10
+addons:
+  sauce_connect:
+    - username: $SAUCE_USERNAME
+    - access_key: $SAUCE_ACCESS_KEY
+install:
+  - npm cache clean
+  - make bootstrap
+script:
+  - make test-ci
+after_success:
+  - ./node_modules/.bin/lcov-result-merger "coverage/**/lcov.info" | ./node_modules/.bin/coveralls
+env:
+  global:
+    - secure: "AfyaqEddoOzyQS2lx22xRN9OR3FN4BYLXXfISUvyJjObTD4dG08ZHydWTQcvnKMhN0V92vybt2gKOxsTXMHuy5gclMHnDLeclabgHZA6h6kOJLRyyHyj8/fDDkOAuA0dCki4/TQGENoyFl9+ei1oWvQI0ZfVCNote7zj9987gp0="
+    - secure: "jbvaIBrMyBopXkpiSQmUh5BfnacJkSlz29ecWO3lMw3tlO2PM8rZI+pq/v5NLPJJT64kfxsmdSGEO+go+FpZq2EDg+KS/TZ/3ZuHGxXzy9u1FBeeQP85mwqANuqwITq5Gc6ZehdqsPJCyBDspmoXwcMXIBa0P8c8ELG4xwdkPdM="
