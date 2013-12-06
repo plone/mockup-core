@@ -5,7 +5,7 @@
   "homepage": "http://plone.github.io/mockup",
   "devDependencies": {
     "bower": "~1.2.8",
-    "coveralls": "~2.5.0",
+    "coveralls": "~2.6.0",
     "grunt-cli": "~0.1.11",
     "grunt-contrib-jshint": "~0.7.2",
     "grunt-karma": "~0.7.1",
