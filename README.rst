@@ -64,8 +64,9 @@ Status of builds
    :target: https://saucelabs.com/u/plone-mockup-core
    :alt: Selenium Test Status
 
-.. image:: https://saucelabs.com/browser-matrix/plone-mockup-core.svg
-   :target: https://saucelabs.com/u/plone-mockup-core
-   :alt: Selenium Tests Matrix
+.. raw:: html
+   <a href="https://saucelabs.com/u/plone-mockup-core">
+       <img src="https://saucelabs.com/browser-matrix/plone-mockup-core.svg" alt="Selenium Tests Matrix" />
+   </a>
 
 .. _Mockup: https://github.com/plone/mockup
