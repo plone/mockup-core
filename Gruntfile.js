@@ -60,9 +60,6 @@ module.exports = function(grunt) {
       test_ci: {
         singleRun: true,
         port: 8000,
-        browserDisconnectTimeout: 10000,
-        browserDisconnectTolerance: 2,
-        browserNoActivityTimeout: 30000,
         browsers: [
           'SL_Chrome',
           'SL_Opera',
