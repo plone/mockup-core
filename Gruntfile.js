@@ -60,7 +60,16 @@ module.exports = function(grunt) {
       test_ci: {
         singleRun: true,
         port: 8000,
-        browsers: ['sauce_chrome', 'sauce_firefox'],
+        browsers: [
+          'SL_Chrome',
+          'SL_Opera',
+          'SL_Firefox',
+          'SL_Safari',
+          'SL_IE_8',
+          'SL_IE_9',
+          'SL_IE_10',
+          'SL_IE_11'
+        ],
         reporters: ['junit', 'coverage'],
         junitReporter: {
           outputFile: 'test-results.xml'
@@ -70,16 +79,48 @@ module.exports = function(grunt) {
           startConnect: true
         },
         customLaunchers: {
-          'sauce_chrome': {
-             base: 'SauceLabs',
-             platform: 'Windows 7',
-             browserName: 'chrome'
-           },
-          'sauce_firefox': {
-             base: 'SauceLabs',
-             platform: 'Windows 7',
-             browserName: 'firefox'
-           }
+          'SL_Chrome': {
+            base: 'SauceLabs',
+            browserName: 'chrome'
+          },
+          'SL_Firefox': {
+            base: 'SauceLabs',
+            browserName: 'firefox'
+          },
+          'SL_Opera': {
+            base: 'SauceLabs',
+            browserName: 'opera'
+          },
+          'SL_Safari': {
+            base: 'SauceLabs',
+            browserName: 'safari',
+            platform: 'Mac 10.8',
+            version: '6'
+          },
+          'SL_IE_8': {
+            base: 'SauceLabs',
+            browserName: 'internet explorer',
+            platform: 'Windows 7',
+            version: '8'
+          },
+          'SL_IE_9': {
+            base: 'SauceLabs',
+            browserName: 'internet explorer',
+            platform: 'Windows 2008',
+            version: '9'
+          },
+          'SL_IE_10': {
+            base: 'SauceLabs',
+            browserName: 'internet explorer',
+            platform: 'Windows 2012',
+            version: '10'
+          },
+          'SL_IE_11': {
+            base: 'SauceLabs',
+            browserName: 'internet explorer',
+            platform: 'Windows 8.1',
+            version: '11'
+          }
         }
       }
     }
