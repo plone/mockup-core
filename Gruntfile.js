@@ -62,6 +62,7 @@ module.exports = function(grunt) {
         port: 8000,
         browsers: [
           'SL_Chrome',
+          'SL_Opera',
           'SL_Firefox',
           'SL_Safari',
           'SL_IE_8',
@@ -69,7 +70,7 @@ module.exports = function(grunt) {
           'SL_IE_10',
           'SL_IE_11'
         ],
-        reporters: ['junit', 'coverage'],
+        reporters: ['junit', 'coverage', 'saucelabs'],
         junitReporter: {
           outputFile: 'test-results.xml'
         },
@@ -85,6 +86,10 @@ module.exports = function(grunt) {
           'SL_Firefox': {
             base: 'SauceLabs',
             browserName: 'firefox'
+          },
+          'SL_Opera': {
+            base: 'SauceLabs',
+            browserName: 'opera'
           },
           'SL_Safari': {
             base: 'SauceLabs',
