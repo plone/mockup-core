@@ -123,6 +123,7 @@ define([
       Registry.scan($el);
       expect($el.data('pattern-example').example).to.be.equal('works');
     });
+
     it("try register a pattern without name", function() {
       Registry.register(function($el, options) {});
       expect(this.warnMsg).to.be.equal('Pattern didn\'t specified a name.');
@@ -143,6 +144,22 @@ define([
       Registry.register(ExamplePattern);
       expect($.fn.patternExample).to.be.equal(undefined);
       expect($.fn.example).to.not.equal(undefined);
+    });
+
+    it("jquery plugin with custom options", function() {
+      var ExamplePattern = function($el, options) {
+        this.options = options
+      };
+      ExamplePattern.prototype.name = 'example';
+
+      Registry.register(ExamplePattern);
+
+      var self = this,
+          $el = $('<div/>');
+
+      $el.patternExample({option1: 'value1'});
+
+      expect($el.data('pattern-example').options.option1).to.be.equal('value1');
     });
 
     it("call methods via jquery plugin", function() {
