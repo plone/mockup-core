@@ -60,9 +60,9 @@ module.exports = function(grunt) {
       test_ci: {
         singleRun: true,
         port: 8000,
-        browserDisconnectTimeout: 20000,
-        browserDisconnectTolerance: 3,
-        browserNoActivityTimeout: 60000,
+        browserDisconnectTimeout: 10000,
+        browserDisconnectTolerance: 2,
+        browserNoActivityTimeout: 30000,
         browsers: [
           'SL_Chrome',
           'SL_Opera',
@@ -71,10 +71,10 @@ module.exports = function(grunt) {
           'SL_IE_8',
           'SL_IE_9',
           'SL_IE_10',
-          'SL_IE_11',
-          'SL_IPhone',
-          'SL_IPad',
-          'SL_Android'
+          'SL_IE_11'
+          //'SL_IPhone',
+          //'SL_IPad',
+          //'SL_Android'
         ],
         reporters: ['junit', 'coverage', 'saucelabs'],
         junitReporter: {
