@@ -35,15 +35,19 @@ define([
   window.mocha.setup('bdd');
 
   describe("Base", function () {
+
     beforeEach(function() {
       this._patterns = $.extend({}, Registry.patterns);
     });
+
     afterEach(function() {
       Registry.patterns = this._patterns;
     });
+
     it("read options from dom tree", function() {
       // TODO: check extending Base pattern and multiple extending
     });
+
   });
 
 });

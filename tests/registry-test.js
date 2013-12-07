@@ -148,7 +148,7 @@ define([
 
     it("jquery plugin with custom options", function() {
       var ExamplePattern = function($el, options) {
-        this.options = options
+        this.options = options;
       };
       ExamplePattern.prototype.name = 'example';
 
