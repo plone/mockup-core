@@ -4,6 +4,9 @@ module.exports = function(grunt) {
       karmaConfig = require('./node_modules/karma/lib/config'),
       karmaFiles = [];
 
+  karmaFiles.push('js/config.js');
+  karmaFiles.push('tests/config.js');
+
   for (var key in requirejsOptions.paths) {
     karmaFiles.push({
       pattern: requirejsOptions.paths[key] + '.js',
@@ -12,9 +15,6 @@ module.exports = function(grunt) {
   }
 
   karmaFiles.push({pattern: 'tests/*-test.js', included: false});
-
-  karmaFiles.push('js/config.js');
-  karmaFiles.push('tests/config.js');
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -60,6 +60,9 @@ module.exports = function(grunt) {
       test_ci: {
         singleRun: true,
         port: 8000,
+        browserDisconnectTimeout: 20000,
+        browserDisconnectTolerance: 3,
+        browserNoActivityTimeout: 60000,
         browsers: [
           'SL_Chrome',
           'SL_Opera',
@@ -68,7 +71,10 @@ module.exports = function(grunt) {
           'SL_IE_8',
           'SL_IE_9',
           'SL_IE_10',
-          'SL_IE_11'
+          'SL_IE_11',
+          'SL_IPhone',
+          'SL_IPad',
+          'SL_Android'
         ],
         reporters: ['junit', 'coverage', 'saucelabs'],
         junitReporter: {
@@ -120,6 +126,24 @@ module.exports = function(grunt) {
             browserName: 'internet explorer',
             platform: 'Windows 8.1',
             version: '11'
+          },
+          'SL_IPhone': {
+            base: 'SauceLabs',
+            browserName: 'iphone',
+            platform: 'OS X 10.8',
+            version: '6.1'
+          },
+          'SL_IPad': {
+            base: 'SauceLabs',
+            browserName: 'ipad',
+            platform: 'OS X 10.8',
+            version: '6.1'
+          },
+          'SL_Android': {
+            base: 'SauceLabs',
+            browserName: 'android',
+            platform: 'Linux',
+            version: '4.0'
           }
         }
       }

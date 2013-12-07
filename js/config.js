@@ -3,13 +3,14 @@
 var requirejsOptions = {
   baseUrl: './',
   paths: {
-      'chai': 'bower_components/chai/chai',
+      'expect': 'bower_components/expect/expect',
       'jquery': 'bower_components/jquery/jquery',
       'mockup-docs': 'js/docs',
       'mockup-patterns-base': 'js/pattern',
       'mockup-registry': 'js/registry'
   },
   shim: {
+    'expect': { exports: 'window.expect' }
   }
 };
 

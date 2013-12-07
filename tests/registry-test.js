@@ -25,16 +25,13 @@
 //
 
 define([
-  'chai',
+  'expect',
   'jquery',
   'mockup-registry'
-], function(chai, $, Registry) {
+], function(expect, $, Registry) {
   "use strict";
 
-  var expect = chai.expect,
-      mocha = window.mocha;
-
-  mocha.setup('bdd');
+  window.mocha.setup('bdd');
 
   describe("Registry", function () {
     beforeEach(function() {
