@@ -26,29 +26,46 @@
 
 define([
   'expect',
-  'jquery',
-  'mockup-registry',
-  'mockup-patterns-base'
-], function(expect, $, Registry, Base) {
+  'sinon',
+  'mockup-docs-page'
+], function(expect, sinon, Page) {
   "use strict";
 
   window.mocha.setup('bdd');
 
-  describe("Base", function () {
+  describe("Docs:Model:Page", function () {
 
     beforeEach(function() {
-      this._patterns = $.extend({}, Registry.patterns);
+      this.server = sinon.fakeServer.create();
+      this.server.autoRespond = true;
+      this.server.autoRespondAfter = 0;
     });
 
     afterEach(function() {
-      Registry.patterns = this._patterns;
+      this.server.restore();
     });
 
-    // simple extend
-    // multi extend
-    // __returnDefaults
-    // on/trigger helpers
-    it("XXX", function() {
+    it("has default values", function() {
+      var page = new Page();
+      expect(page.get('title')).to.equal('');
+      expect(page.get('text')).to.equal('');
+    });
+
+    it("will render markdown content", function() {
+      var page = new Page({markdown_text: '# Title'});
+      expect(page.get('text')).to.equal('<h1>Title</h1>');
+    });
+
+    it("will fetch markdown document", function(done) {
+      this.server.respondWith("GET", /some-document/, function (xhr, id) {
+        xhr.respond(200, { "Content-Type": "plain/text" }, '# Title');
+      });
+
+      var page = new Page({markdown_url: 'some-document'});
+      page.on('change:text', function(e, content) {
+        expect(content).to.equal('<h1>Title</h1>');
+        done();
+      });
     });
 
   });

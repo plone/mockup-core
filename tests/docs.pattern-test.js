@@ -26,23 +26,29 @@
 
 define([
   'expect',
-  'jquery',
-  'mockup-registry',
-  'mockup-docs'
-], function(expect, $, Registry, Docs) {
+  'sinon',
+  'mockup-docs-pattern'
+], function(expect, sinon, Pattern) {
   "use strict";
 
   window.mocha.setup('bdd');
 
-  describe("Docs", function () {
+  describe("Docs:Model:Pattern", function () {
 
     beforeEach(function() {
+      this.server = sinon.fakeServer.create();
+      this.server.autoRespond = true;
+      this.server.autoRespondAfter = 0;
     });
 
     afterEach(function() {
+      this.server.restore();
     });
 
-    it("no tests yet", function() {
+    it("has default values", function() {
+      var pattern = new Pattern();
+      expect(pattern.get('title')).to.equal('');
+      expect(pattern.get('text')).to.equal('');
     });
 
   });
