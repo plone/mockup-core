@@ -8,7 +8,6 @@ define([
 
   var Router = Backbone.Router.extend({
     routes: {
-      'pattern': 'defaultPattern',
       'pattern/(:id)': 'pattern',
       '': 'defaultPage',
       '(:id)': 'page'
@@ -25,18 +24,17 @@ define([
     },
 
     page: function(id) {
-      this.show(new PageView({
-        model: this.app.pages.get(id),
-      }));
-    },
-
-    defaultPattern: function() {
-      this.pattern(this.app.patterns.first());
+      this.app.$navigation.find('li.active').removeClass('active');
+      this.app.$navigationRight.find('li.active').removeClass('active');
+      if (this.app.$navigation.parents('#navigation.in').size() !== 0) {
+        this.app.$navigation.parents('#navigation').collapse('hide');
+      }
+      this.show(new PageView({ model: this.app.pages.get(id) }));
     },
 
     pattern: function(id) {
       this.show(new PatternView({
-        model: this.app.patterns.get(id),
+        model: this.app.patterns.get(id)
       }));
     },
 
@@ -46,7 +44,10 @@ define([
         delete this.currentView;
       }
       this.currentView = view;
-      this.app.$el.html(this.currentView.render().$el);
+      this.app.$content.html(this.currentView.render().$el);
+      if (view.model) {
+        view.model.trigger('shown', view.model);
+      }
     }
   });
 

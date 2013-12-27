@@ -4,48 +4,55 @@ define([
   'backbone',
   'mockup-docs-router',
   'mockup-docs-pages',
-  'mockup-docs-patterns'
-], function($, _, Backbone, Router, Pages, Patterns) {
+  'mockup-docs-navitem-view',
+  'bootstrap-collapse',
+  'bootstrap-transition'
+], function($, _, Backbone, Router, Pages, NavItemView) {
 
-  var App = function(options) { this.initialize(options || {}); };
-  App.prototype = {
+  var App = Backbone.View.extend({
+    el: 'body',
     defaultPage: 'index',
 
     initialize: function(options) {
-      this.$el = options.$el || $('#content');
+      var self = this;
 
-      this.patterns = new Patterns();
-      this.pages = new Pages();
-      this.router = new Router({app: this});
+      self.$content = options.$content || $('#content');
+      self.$navigation = options.$navigation || $('#navigation');
+      self.$navigationRight = options.$navigationRight || $('#navigation-right');
 
-      //var path = window.location.pathname.split('/'),
-      //    this.rootUrl = '';
-      //_.each(path, function (pathEntry, index) {
-      //  if (index < path.length - 1) {
-      //    rootUrl += pathEntry + '/';
-      //  }
-      //});
-      //rootUrl += 'index.html';
+      self.navigationItems = {};
 
-      return this;
-    },
+      self.router = new Router({app: self});
+      self.pages = new Pages();
 
-    start: function() {
-      Backbone.history.start({
-        pushState: false,
-    //    root: rootUrl
+      self.listenTo(self.pages, "add", self.addNavItem);
+      self.listenTo(self.pages, "open", self.openPage);
+
+      _.each(options.pages || [], function(page) {
+        self.pages.add(page);
       });
+
+      Backbone.history.start({ pushState: false });
     },
 
-    addPage: function(page) {
-      this.pages.add(page);
+    addNavItem: function(page) {
+      var pageId = page.get('id');
+      if (pageId !== this.defaultPage) {
+        this.navigationItems[pageId] = new NavItemView({ model: page });
+        this.navigationItems[pageId].render();
+        if (page.get('navigation') === 'right') {
+          this.$navigationRight.append(this.navigationItems[pageId].$el);
+        } else {
+          this.$navigation.append(this.navigationItems[pageId].$el);
+        }
+      }
     },
 
-    addPattern: function(pattern) {
-      this.pages.add(pattern);
+    openPage: function(page) {
+      this.router.navigate('#' + page.get('id'), {trigger: true});
     }
 
-  };
+  });
 
   return App;
 });

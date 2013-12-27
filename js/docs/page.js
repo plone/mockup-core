@@ -7,6 +7,9 @@ define([
   var Page = Backbone.Model.extend({
     defaults: {
       title: '',
+      description: '',
+      navigation: 'left',
+      autotoc: true,
       text: ''
     },
     initialize: function() {
