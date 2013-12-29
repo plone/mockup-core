@@ -2,15 +2,13 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'mockup-docs-page-view',
-  'mockup-docs-pattern-view'
-], function($, _, Backbone, PageView, PatternView) {
+  'mockup-docs-page-view'
+], function($, _, Backbone, PageView) {
 
   var Router = Backbone.Router.extend({
     routes: {
-      'pattern/(:id)': 'pattern',
-      '': 'defaultPage',
-      '(:id)': 'page'
+      ':id': 'page',
+      '*default': 'defaultPage'
     },
 
     initialize: function(options) {
@@ -30,12 +28,6 @@ define([
         this.app.$navigation.parents('#navigation').collapse('hide');
       }
       this.show(new PageView({ model: this.app.pages.get(id) }));
-    },
-
-    pattern: function(id) {
-      this.show(new PatternView({
-        model: this.app.patterns.get(id)
-      }));
     },
 
     show: function(view) {
