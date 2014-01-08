@@ -6,7 +6,8 @@ define([
 
     patterns: {},
 
-    warn: function warn(msg) {
+    warn: function(msg) {
+      /* istanbul ignore next */
       if (window.DEBUG) {
         console.warn(msg);
       }
@@ -30,15 +31,13 @@ define([
             var tmpOptions = {};
             $.each(elOptions.split(';'), function(i, item) {
               item = item.split(':');
-              if (item.length >= 1) {
-                item.reverse();
-                var key = item.pop();
-                key = key.replace(/^\s+|\s+$/g, '');  // trim
-                item.reverse();
-                var value = item.join(':');
-                value = value.replace(/^\s+|\s+$/g, '');  // trim
-                tmpOptions[key] = value;
-              }
+              item.reverse();
+              var key = item.pop();
+              key = key.replace(/^\s+|\s+$/g, '');  // trim
+              item.reverse();
+              var value = item.join(':');
+              value = value.replace(/^\s+|\s+$/g, '');  // trim
+              tmpOptions[key] = value;
             });
             elOptions = tmpOptions;
           }

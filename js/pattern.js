@@ -36,10 +36,8 @@ define([
   var Base = function($el, options) {
     this.$el = $el;
     this.options = $.extend(true, {}, this.defaults || {}, options || {});
-    if (this.options.__returnDefaults !== true) {
-      this.init();
-      this.trigger('init');
-    }
+    this.init();
+    this.trigger('init');
   };
   Base.prototype = {
     constructor: Base,
@@ -47,16 +45,9 @@ define([
       this.$el.on(eventName + '.' + this.name + '.patterns', eventCallback);
     },
     trigger: function(eventName, args) {
-      /* args should be a list */
-      if(args === undefined){
+      // args should be a list
+      if (args === undefined) {
         args = [];
-      }
-      try{
-        args.splice(0, 0, this);
-      }catch(e){
-        // let's not fail here but do our best to pass the args even
-        // if it's trigger incorrectly
-        args = [this];
       }
       this.$el.trigger(eventName + '.' + this.name + '.patterns', args);
     }

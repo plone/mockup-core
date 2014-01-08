@@ -1,6 +1,7 @@
 (function() {
 
 var basePath = '';
+/* istanbul ignore next */
 if (typeof mockupCorePath !== "undefined") {
   basePath = mockupCorePath;
 }
@@ -26,7 +27,7 @@ var requirejsOptions = {
       'react': 'bower_components/react/react',
       'jsx': 'bower_components/require-jsx/jsx',
       'sinon': 'node_modules/sinon/pkg/sinon',
-      'underscore': 'bower_components/underscore/underscore'
+      'underscore': 'bower_components/lodash/dist/lodash.underscore'
   },
   shim: {
     'JSXTransformer': { exports: 'window.JSXTransformer' },
@@ -39,9 +40,11 @@ var requirejsOptions = {
   }
 };
 
+/* istanbul ignore next */
 if (typeof exports !== "undefined" && typeof module !== "undefined") {
   module.exports = requirejsOptions;
 }
+/* istanbul ignore next */
 if (typeof requirejs !== "undefined" && requirejs.config) {
   requirejs.config(requirejsOptions);
 }
