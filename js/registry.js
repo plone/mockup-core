@@ -8,7 +8,7 @@ define([
 
     warn: function(msg) {
       /* istanbul ignore next */
-      if (window.DEBUG) {
+      if (window.DEBUG && window.console) {
         console.warn(msg);
       }
     },
