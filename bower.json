@@ -4,12 +4,15 @@
   "description": "Mockup Core",
   "dependencies": {
     "backbone": "1.1.0",
+    "bootstrap": "3.0.3",
     "jquery": "1.8.3",
     "markdown": "0.5.0",
+    "marked": "0.3.0",
+    "react": "0.8.0",
+    "require-jsx": "ba312565e46dd5be65d1e68741a6816142c425af",
     "underscore": "1.5.2"
   },
-  "devDependencies": {
-    "expect": "0.2.0",
-    "sinonjs": "1.7.3"
+  "resolutions": {
+    "jquery": "1.8.3"
   }
 }

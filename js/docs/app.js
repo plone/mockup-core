@@ -1,57 +1,31 @@
 define([
   'jquery',
-  'underscore',
+  'react',
   'backbone',
-  'mockup-docs-router',
-  'mockup-docs-pages',
-  'mockup-docs-navitem-view',
-  'bootstrap-collapse',
-  'bootstrap-transition'
-], function($, _, Backbone, Router, Pages, NavItemView) {
+  'jsx!mockup-docs-view'
+], function($, React, Backbone, AppView) {
 
-  var App = Backbone.View.extend({
-    el: 'body',
-    defaultPage: 'index',
+  var App = Backbone.Router.extend({
+    routes: {
+      '*id': 'openPage',
+    },
 
     initialize: function(options) {
-      var self = this;
-
-      self.$content = options.$content || $('#content');
-      self.$navigation = options.$navigation || $('#navigation');
-      self.$navigationRight = options.$navigationRight || $('#navigation-right');
-
-      self.navigationItems = {};
-
-      self.router = new Router({app: self});
-      self.pages = new Pages();
-
-      self.listenTo(self.pages, "add", self.addNavItem);
-      self.listenTo(self.pages, "open", self.openPage);
-
-      _.each(options.pages || [], function(page) {
-        self.pages.add(page);
+      this.options = options || {};
+      this._view = new AppView({
+        pages: this.options.pages,
+        app: this
       });
-
+      React.renderComponent(this._view, document.body);
       Backbone.history.start({ pushState: false });
     },
 
-    addNavItem: function(page) {
-      var pageId = page.get('id');
-      if (pageId !== this.defaultPage) {
-        this.navigationItems[pageId] = new NavItemView({ model: page });
-        this.navigationItems[pageId].render();
-        if (page.get('navigation') === 'right') {
-          this.$navigationRight.append(this.navigationItems[pageId].$el);
-        } else {
-          this.$navigation.append(this.navigationItems[pageId].$el);
-        }
-      }
-    },
-
     openPage: function(page) {
-      this.router.navigate('#' + page.get('id'), {trigger: true});
+      if (page === null) {
+        page = this.options.defaultPage || 'index';
+      }
+      this._view.setState({ page: page });
     }
-
   });
 
   return App;
