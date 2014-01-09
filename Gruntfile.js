@@ -18,13 +18,16 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    jshint: { all: ['Gruntfile.js', 'src/*.js', 'tests/*.js'] },
+    jshint: { all: ['Gruntfile.js', 'js/*.js', 'tests/*.js'] },
     karma: {
       options: {
         basePath: './',
         frameworks: ['mocha', 'requirejs'],
         files: karmaFiles,
-        preprocessors: { 'js/*.js': 'coverage' },
+        preprocessors: {
+          'js/*.js': 'coverage'
+          //'js/docs/*.js': 'jsx coverage'
+        },
         reporters: ['dots', 'progress', 'coverage'],
         coverageReporter: { type : 'lcov', dir : 'coverage/' },
         port: 9876,
