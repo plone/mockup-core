@@ -10,31 +10,19 @@ define([
       position: React.PropTypes.oneOf(['left', 'right'])
     },
     getDefaultProps: function() {
-      return {
-        position: 'left'
-      };
-    },
-    openPage: function(e) {
-      e.preventDefault();
-      this.props.app.navigate(
-        e.target.attributes.href.value,
-        { trigger: true, replace: true }
-      );
+      return { position: 'left' };
     },
     render: function() {
-      var currentPage = Backbone.history.location.hash.substr(1).split('/')[0],
-          NavItems = _.filter(this.props.pages, function(page) {
-          return page.id !== this.props.defaultPage && (page.position || 'left') === this.props.position;
-        }, this).map(function (page) {
-          return <li key={page.id} className={currentPage === page.id ? 'active' : ''}>
-                   <a onClick={this.openPage}
-                     href={'#' + page.id}
-                     alt={page.description}>{page.title}</a></li>;
-        }, this);
-
+      var currentPage = Backbone.history.location.hash.substr(1).split('/')[0];
       return (
         <ul className={"nav navbar-nav navbar-" + this.props.position}>
-          {NavItems}
+          {_.filter(this.props.pages, function(page) {
+            return page.id !== this.props.defaultPage && (page.position || 'left') === this.props.position;
+          }, this).map(function (page) {
+            return <li key={page.id} className={currentPage === page.id ? 'active' : ''}>
+                     <a href={'#' + page.id} alt={page.description}>{page.title}</a>
+                   </li>;
+          }, this)}
         </ul>
       );
     }
