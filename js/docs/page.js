@@ -3,10 +3,11 @@
 define([
   'jquery',
   'underscore',
+  'backbone',
   'marked',
   'react',
   'jsx!mockup-docs-pattern'
-], function($, _, marked, React, Pattern) {
+], function($, _, Backbone, marked, React, Pattern) {
 
   var Page = React.createClass({
     getDefaultProps: function() {
@@ -28,6 +29,8 @@ define([
 
       if (typeof page.text === 'string' && page.text.trim().substr(0, 1) !== '<') {
         PageText = marked(page.text)
+      } else {
+        PageText = page.text;
       }
 
       if (page.autotoc) {
