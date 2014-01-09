@@ -27,6 +27,7 @@ var requirejsOptions = {
       'react': 'bower_components/react/react',
       'jsx': 'bower_components/require-jsx/jsx',
       'sinon': 'node_modules/sinon/pkg/sinon',
+      'text': 'bower_components/requirejs-text/text',
       'underscore': 'bower_components/lodash/dist/lodash.underscore'
   },
   shim: {
