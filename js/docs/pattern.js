@@ -14,7 +14,7 @@ define([
       return {pattern: undefined};
     },
     parsePattern: function(text) {
-      var option = /(.*) (.*): (.*) \((.*)\)$/,
+      var option = /(.*)\((.*)\): (.*) \((.*)\)$/,
           section = /^Options:|^Documentation:|^License:|^Example:/,
           currentOption,
           currentExample,
@@ -39,7 +39,8 @@ define([
               if (!pattern.options) {
                 pattern.options = {};
               }
-              pattern.options[currentOption[2]] = {
+              pattern.options[currentOption[1]] = {
+                type: currentOption[2],
                 description: currentOption[3],
                 defaultValue: currentOption[4]
               };
@@ -120,7 +121,7 @@ define([
               {Object.keys(options).map(function(name) {
                   return <tr key={name}>
                            <td>{name}</td>
-                           <td> </td>
+                           <td>{options[name].type}</td>
                            <td>{options[name].defaultValue}</td>
                            <td>{options[name].description}</td>
                          </tr>
