@@ -14,7 +14,7 @@ var requirejsOptions = {
       'backbone': 'bower_components/backbone/backbone',
       'bootstrap-collapse': 'bower_components/bootstrap/js/collapse',
       'bootstrap-transition': 'bower_components/bootstrap/js/transition',
-      'expect': 'node_modules/expect.js/expect',
+      'expect': 'bower_components/expect/expect',
       'jquery': 'bower_components/jquery/jquery',
       'marked': 'bower_components/marked/lib/marked',
       'mockup-docs': basePath + 'js/docs/app',
@@ -26,7 +26,7 @@ var requirejsOptions = {
       'mockup-registry': basePath + 'js/registry',
       'react': 'bower_components/react/react',
       'jsx': 'bower_components/require-jsx/jsx',
-      'sinon': 'node_modules/sinon/pkg/sinon',
+      'sinon': 'bower_components/sinonjs/sinon',
       'text': 'bower_components/requirejs-text/text',
       'underscore': 'bower_components/lodash/dist/lodash.underscore'
   },

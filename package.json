@@ -6,7 +6,6 @@
   "devDependencies": {
     "bower": "~1.2.8",
     "coveralls": "~2.6.1",
-    "expect.js": "0.2.0",
     "grunt-cli": "~0.1.11",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-karma": "~0.7.2",
@@ -18,8 +17,7 @@
     "karma-phantomjs-launcher": "~0.1.1",
     "karma-requirejs": "~0.2.1",
     "karma-sauce-launcher": "~0.2.0",
-    "lcov-result-merger": "~0.0.2",
-    "sinon": "1.7.3"
+    "lcov-result-merger": "~0.0.2"
   },
   "maintainers": [
     {
