@@ -52,7 +52,7 @@ define([
         '/* Toggle pattern.\n' +
         ' *\n' +
         ' * Options:\n' +
-        ' *    someoption: somedescription (somevalue)\n' +
+        ' *    someoption(sometype): somedescription (somevalue)\n' +
         ' *\n' +
         ' * Documentation:\n' +
         ' *    # Example 1\n' +
@@ -70,6 +70,7 @@ define([
         license: '<p>Copyright (C) 2010 Plone Foundation</p>\n',
         options: {
           someoption: {
+            type: 'sometype',
             defaultValue: 'somevalue',
             description: 'somedescription'
           }

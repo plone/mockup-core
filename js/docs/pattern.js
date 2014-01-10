@@ -39,10 +39,10 @@ define([
               if (!pattern.options) {
                 pattern.options = {};
               }
-              pattern.options[currentOption[1]] = {
-                type: currentOption[2],
-                description: currentOption[3],
-                defaultValue: currentOption[4]
+              pattern.options[currentOption[1].trim()] = {
+                type: currentOption[2].trim(),
+                description: currentOption[3].trim(),
+                defaultValue: currentOption[4].trim()
               };
             }
           } else if (currentExample && currentSection === 'example') {
