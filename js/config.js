@@ -1,14 +1,8 @@
 (function() {
 
-var basePath = '';
-/* istanbul ignore next */
-if (typeof mockupCorePath !== "undefined") {
-  basePath = mockupCorePath;
-}
-
 var requirejsOptions = {
-
   baseUrl: './',
+  optimize: 'uglify',
   paths: {
       'JSXTransformer': 'bower_components/react/JSXTransformer',
       'backbone': 'bower_components/backbone/backbone',
@@ -17,13 +11,13 @@ var requirejsOptions = {
       'expect': 'bower_components/expect/expect',
       'jquery': 'bower_components/jquery/jquery',
       'marked': 'bower_components/marked/lib/marked',
-      'mockup-docs': basePath + 'js/docs/app',
-      'mockup-docs-page': basePath + 'js/docs/page',
-      'mockup-docs-pattern': basePath + 'js/docs/pattern',
-      'mockup-docs-view': basePath + 'js/docs/view',
-      'mockup-docs-navigation': basePath + 'js/docs/navigation',
-      'mockup-patterns-base': basePath + 'js/pattern',
-      'mockup-registry': basePath + 'js/registry',
+      'mockup-docs': 'js/docs/app',
+      'mockup-docs-page': 'js/docs/page',
+      'mockup-docs-pattern': 'js/docs/pattern',
+      'mockup-docs-view': 'js/docs/view',
+      'mockup-docs-navigation': 'js/docs/navigation',
+      'mockup-patterns-base': 'js/pattern',
+      'mockup-registry': 'js/registry',
       'react': 'bower_components/react/react',
       'jsx': 'bower_components/require-jsx/jsx',
       'sinon': 'bower_components/sinonjs/sinon',
