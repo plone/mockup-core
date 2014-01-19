@@ -7,6 +7,11 @@ module.exports = function(grunt) {
   karmaFiles.push('bower_components/es5-shim/es5-shim.js');
   karmaFiles.push('bower_components/es5-shim/es5-sham.js');
   karmaFiles.push('bower_components/console-polyfill/index.js');
+  karmaFiles.push('node_modules/mocha/mocha.js');
+  karmaFiles.push('node_modules/karma-mocha/lib/adapter.js');
+  karmaFiles.push('node_modules/requirejs/require.js');
+  karmaFiles.push('node_modules/karma-requirejs/lib/adapter.js');
+
   karmaFiles.push('js/config.js');
   karmaFiles.push('tests/config.js');
 
@@ -25,7 +30,7 @@ module.exports = function(grunt) {
     karma: {
       options: {
         basePath: './',
-        frameworks: ['mocha', 'requirejs'],
+        frameworks: [],
         files: karmaFiles,
         preprocessors: {
           'js/*.js': 'coverage',
