@@ -21,22 +21,22 @@ define([
     it("without autotoc", function() {
       var page = new Page({
         id: 'somepage',
-        title: 'Some title',
-        description: 'Some description',
-        text: '<p>Some text</p>',
+        title: 'some title',
+        description: 'some description',
+        text: '<p>some text</p>',
         autotoc: false
       });
       React.renderComponent(page, this.$root[0]);
-      expect($('.page-header h1', this.$root).html()).to.be('Some title');
-      expect($('.page-header p', this.$root).html()).to.be('Some description');
-      expect($('.page-content > div', this.$root).html().toLowerCase()).to.be('<p>Some text</p>');
+      expect($('.page-header h1', this.$root).html()).to.be('some title');
+      expect($('.page-header p', this.$root).html()).to.be('some description');
+      expect($('.page-content > div', this.$root).html().toLowerCase()).to.be('<p>some text</p>');
     });
 
     it("autotoc and markdown", function() {
       var page = new Page({
         id: 'somepage',
-        title: 'Some title',
-        description: 'Some description',
+        title: 'some title',
+        description: 'some description',
         text: '# something',
         autotoc: true
       });
@@ -50,13 +50,13 @@ define([
     it("patterns", function() {
       var page = new Page({
         id: 'somepage',
-        title: 'Some title',
-        description: 'Some description',
+        title: 'some title',
+        description: 'some description',
         autotoc: false,
         patterns: [
           { id: 'somepattern',
-            title: 'Some Pattern',
-            description: 'Some pattern description.'
+            title: 'some Pattern',
+            description: 'some pattern description.'
           }
         ]
       });
