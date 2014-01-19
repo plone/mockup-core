@@ -49,6 +49,7 @@ Run tests with Chrome::
 
     $ make test-dev
 
+
 Status of builds
 ----------------
 
@@ -69,5 +70,6 @@ Status of builds
    <a href="https://saucelabs.com/u/plone-mockup-core">
        <img src="https://saucelabs.com/browser-matrix/plone-mockup-core.svg" alt="Selenium Tests Matrix" />
    </a>
+
 
 .. _Mockup: https://github.com/plone/mockup
