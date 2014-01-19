@@ -2,7 +2,7 @@ define([
   'jquery',
   'react',
   'backbone',
-  'jsx!mockup-docs-view'
+  'mockup-docs-view'
 ], function($, React, Backbone, AppView) {
 
   var App = Backbone.Router.extend({

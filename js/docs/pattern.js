@@ -4,6 +4,16 @@ define([
   'mockup-registry'
 ], function(marked, React, Registry) {
 
+  var div = React.DOM.div,
+      a = React.DOM.a,
+      h2 = React.DOM.h2,
+      tr = React.DOM.tr;
+      th = React.DOM.th;
+      td = React.DOM.td;
+      tbody = React.DOM.tbody;
+      thead = React.DOM.thead;
+      table = React.DOM.table;
+
   var Pattern = React.createClass({
     getDefaultProps: function() {
       return {
@@ -97,42 +107,44 @@ define([
     },
     render: function() {
       if (!this.state.pattern) {
-        return <div className="mockup-pattern" />
+        return div({ className: 'mockup-pattern' });
       }
       var documentation = this.state.pattern.documentation,
           options = this.state.pattern.options,
           license = this.state.pattern.license;
-      return <div className="mockup-pattern">
-          <h2>Documentation</h2>
-          <div className="mockup-pattern-documentation"
-               dangerouslySetInnerHTML={{__html: documentation}} />
-          <h2>Configuration</h2>
-          <div className="table-responsive mockup-pattern-configuration">
-            <table className="table table-stripped table-condensed">
-              <thead>
-                <tr>
-                  <th>Option</th>
-                  <th>Type</th>
-                  <th>Default</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-              {Object.keys(options).map(function(name) {
-                  return <tr key={name}>
-                           <td>{name}</td>
-                           <td>{options[name].type}</td>
-                           <td>{options[name].defaultValue}</td>
-                           <td>{options[name].description}</td>
-                         </tr>
-              })}
-              </tbody>
-            </table>
-          </div>
-          <h2>License</h2>
-          <div className="mockup-pattern-license"
-               dangerouslySetInnerHTML={{__html: license}} />
-        </div>
+      return (
+        div({ className: 'mockup-pattern' }, [
+          h2({}, 'Documentation'),
+          div({ className: 'mockup-pattern-documentation', dangerouslySetInnerHTML: {__html: documentation} }),
+          h2({}, 'Configuration'),
+          div({ className: 'table-responsive mockup-pattern-configuration' },
+            table({ className: 'table table-stripped table-condensed' }, [
+              thead({}, 
+                tr({}, [
+                  th({}, 'Option'),
+                  th({}, 'Type'),
+                  th({}, 'Default'),
+                  th({}, 'Description')
+                ])
+              ),
+              tbody({}, 
+                Object.keys(options).map(function(name) {
+                  return (
+                    tr({ key: name }, [
+                      td({}, name),
+                      td({}, options[name].type),
+                      td({}, options[name].defaultValue),
+                      td({}, options[name].description)
+                    ])
+                  );
+                })
+              )
+            ])
+          ),
+          h2({}, 'License'),
+          div({ className: 'mockup-pattern-license', dangerouslySetInnerHTML: {__html: license} })
+        ])
+      );
     }
   });
 
