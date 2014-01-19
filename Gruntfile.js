@@ -4,6 +4,9 @@ module.exports = function(grunt) {
       karmaConfig = require('./node_modules/karma/lib/config'),
       karmaFiles = [];
 
+  karmaFiles.push('bower_components/es5-shim/es5-shim.js');
+  karmaFiles.push('bower_components/es5-shim/es5-sham.js');
+  karmaFiles.push('bower_components/console-polyfill/index.js');
   karmaFiles.push('js/config.js');
   karmaFiles.push('tests/config.js');
 
