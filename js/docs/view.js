@@ -42,7 +42,7 @@ define([
         div({ className: 'wrapper page-' + pageID }, [
           a({ href: '#content', className: 'sr-only' }, 'Skip to main content' ),
           header({ className: 'navbar navbar-inverse navbar-fixed-top mockup-header' },
-            div({ className: 'container' }, [
+            div({ className: 'header container' }, [
               div({ className: 'navbar-header' }, [
                 button({ type: 'button', className: 'navbar-toggle',
                          'data-toggle': 'collapse', 'data-target': '#navigation' }, [

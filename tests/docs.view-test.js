@@ -40,8 +40,8 @@ define([
         ]
       });
       React.renderComponent(view, this.$root[0]);
-      expect($('header nav li', this.$root).size()).to.be(2);
-      expect($('header nav li.active', this.$root).size()).to.be(0);
+      expect($('.header .nav li', this.$root).size()).to.be(2);
+      expect($('.header .nav li.active', this.$root).size()).to.be(0);
       expect($('.page-index', this.$root).size()).to.be(1);
       view.setState({page:'page1'});
       expect($('.page-index', this.$root).size()).to.be(0);
