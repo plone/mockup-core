@@ -43,8 +43,8 @@ define([
       React.renderComponent(page, this.$root[0]);
       expect($('.page-content > div', this.$root).hasClass('row')).to.be(true);
       expect($('.mockup-autotoc li a', this.$root).first().html()).to.be('something');
-      expect($('.page-content > div > div.col-md-9', this.$root).html().toLowerCase()).to.be(
-        '<h1 id="mockup-autotoc_0">something</h1>\n');
+      expect($('.page-content > div > div.col-md-9', this.$root).html().toLowerCase().trim()).to.be(
+        '<h1 id="mockup-autotoc_0">something</h1>');
     });
 
     it("patterns", function() {
