@@ -25,8 +25,8 @@ module.exports = function(grunt) {
         frameworks: ['mocha', 'requirejs'],
         files: karmaFiles,
         preprocessors: {
-          'js/*.js': 'coverage'
-          //'js/docs/*.js': 'jsx coverage'
+          'js/*.js': 'coverage',
+          'js/docs/*.js': 'coverage'
         },
         reporters: ['dots', 'progress', 'coverage'],
         coverageReporter: { type : 'lcov', dir : 'coverage/' },

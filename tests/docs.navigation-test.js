@@ -1,7 +1,7 @@
 define([
   'expect',
   'react',
-  'jsx!mockup-docs-navigation'
+  'mockup-docs-navigation'
 ], function(expect, React, Navigation) {
   "use strict";
 

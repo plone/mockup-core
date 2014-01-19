@@ -1,7 +1,7 @@
 define([
   'expect',
   'react',
-  'jsx!mockup-docs-page'
+  'mockup-docs-page'
 ], function(expect, React, Page) {
   "use strict";
 

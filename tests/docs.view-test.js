@@ -1,7 +1,7 @@
 define([
   'expect',
   'react',
-  'jsx!mockup-docs-view'
+  'mockup-docs-view'
 ], function(expect, React, View) {
   "use strict";
 

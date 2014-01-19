@@ -4,7 +4,7 @@ define([
   'sinon',
   'react',
   'mockup-registry',
-  'jsx!mockup-docs-pattern'
+  'mockup-docs-pattern'
 ], function(_, expect, sinon, React, Registry, Pattern) {
   "use strict";
 
