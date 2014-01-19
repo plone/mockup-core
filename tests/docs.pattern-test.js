@@ -42,8 +42,8 @@ define([
           }
         }
       });
-      expect($('.mockup-pattern-documentation', this.$root).html()).to.be('<p>this is documentation</p>');
-      expect($('.mockup-pattern-license', this.$root).html()).to.be('<p>this is license</p>');
+      expect($('.mockup-pattern-documentation', this.$root).html().toLowerCase()).to.be('<p>this is documentation</p>');
+      expect($('.mockup-pattern-license', this.$root).html().toLowerCase()).to.be('<p>this is license</p>');
       expect($('.mockup-pattern-configuration > table > tbody > tr', this.$root).size()).to.be(2);
     });
 

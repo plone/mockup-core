@@ -72,7 +72,7 @@ define([
         if (typeof value === 'string') {
           pattern[i] = '';
           var lines = value.split('\n'),
-              firstLineSpaces = lines[0].length - lines[0].trimLeft().length;
+          firstLineSpaces = lines[0].length - lines[0].replace(/^\s+/,'').length;
           _.each(value.split('\n'), function(line, j) {
             pattern[i] += line.substring(firstLineSpaces) + '\n';
           });
