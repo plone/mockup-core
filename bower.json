@@ -11,7 +11,6 @@
     "lodash": "2.4.1",
     "marked": "0.3.0",
     "react": "0.8.0",
-    "require-jsx": "ba312565e46dd5be65d1e68741a6816142c425af",
     "requirejs-text": "2.0.10"
   },
   "devDependencies": {
