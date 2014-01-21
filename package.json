@@ -1,7 +1,7 @@
 {
   "name": "mockup-core",
   "version": "1.0.0",
-  "description": "Mockup Core",
+  "description": "Plone CMS Mockup Core",
   "homepage": "http://plone.github.io/mockup",
   "devDependencies": {
     "bower": "~1.2.8",
