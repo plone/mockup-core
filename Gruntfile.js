@@ -32,10 +32,7 @@ module.exports = function(grunt) {
         basePath: './',
         frameworks: [],
         files: karmaFiles,
-        preprocessors: {
-          'js/*.js': 'coverage',
-          'js/docs/*.js': 'coverage'
-        },
+        preprocessors: { 'js/*.js': 'coverage', 'js/docs/*.js': 'coverage' },
         reporters: ['dots', 'progress', 'coverage'],
         coverageReporter: { type : 'lcov', dir : 'coverage/' },
         port: 9876,

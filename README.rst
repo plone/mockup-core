@@ -2,6 +2,9 @@ Mockup Core is a collection of script which are needed to start Mockup_ based
 project.
 
 
+..contents:
+
+
 Inside you will find
 --------------------
 
@@ -13,7 +16,6 @@ Inside you will find
 
 - a **yo generator** to quickly start your project (this is currently being
   developed).
-
 
 Install & Run Tests
 -------------------
@@ -48,6 +50,15 @@ Run tests with PhantomJS::
 Run tests with Chrome::
 
     $ make test-dev
+
+
+Report Issues
+-------------
+
+All issues about Mockup_ related projects are tracked at:
+
+https://github.com/plone/mockup/issues
+
 
 
 Status of builds
