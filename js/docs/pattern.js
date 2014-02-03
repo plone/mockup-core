@@ -34,7 +34,7 @@ define([
 
       text = text.substring(1, text.length - 1);
       _.each(text.split('\n'), function(line, lineNumber) {
-        line = line.substring(line.indexOf('*') + 2)
+        line = line.substring(line.indexOf('*') + 2).replace('\r', '');
       
         if (section.exec(line) !== null) {
           currentSection = section.exec(line)[0].toLowerCase();
