@@ -89,6 +89,10 @@ Changelog
 v1.0.1 - 2014-02-05
 -------------------
 
+* if the pattern file uses windows line endings (CRLF) remove the CR so the
+  still matches.
+  [domruf]
+
 * DocsApp fix for loading patterns. Now it loads pattern as 'text!' using url
   and pattern via requirejs name registered in requirejs paths.
   [garbas]
