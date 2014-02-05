@@ -6,7 +6,7 @@ project.
 
 
 Inside you will find
---------------------
+====================
 
 - a **patterns registry** which is used to register and initialize patterns.
 
@@ -17,8 +17,9 @@ Inside you will find
 - a **yo generator** to quickly start your project (this is currently being
   developed).
 
+
 Install & Run Tests
--------------------
+===================
 
 Install Node version 0.10 or greater
 
@@ -53,16 +54,15 @@ Run tests with Chrome::
 
 
 Report Issues
--------------
+=============
 
 All issues about Mockup_ related projects are tracked at:
 
 https://github.com/plone/mockup/issues
 
 
-
 Status of builds
-----------------
+================
 
 .. image:: https://travis-ci.org/plone/mockup-core.png
    :target: https://travis-ci.org/plone/mockup-core
@@ -82,5 +82,21 @@ Status of builds
        <img src="https://saucelabs.com/browser-matrix/plone-mockup-core.svg" alt="Selenium Tests Matrix" />
    </a>
 
+
+Changelog
+=========
+
+v1.0.1 - 2014-02-05
+-------------------
+
+* DocsApp fix for loading patterns. Now it loads pattern as 'text!' using url
+  and pattern via requirejs name registered in requirejs paths.
+  [garbas]
+
+v1.0.0 - 2014-01-21
+-------------------
+
+* Initial release.
+  [garbas]
 
 .. _Mockup: https://github.com/plone/mockup

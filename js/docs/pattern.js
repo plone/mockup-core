@@ -17,6 +17,7 @@ define([
   var Pattern = React.createClass({
     getDefaultProps: function() {
       return {
+        id: '',
         url: ''
       };
     },
@@ -95,7 +96,7 @@ define([
       var self = this;
       if (this.props.url) {
         require([
-          'text!' + this.props.url, this.props.url
+          'text!' + this.props.url, 'mockup-patterns-' + this.props.id
         ], function (pattern) {
           pattern = (/\/\*[\s\S]*?\*\//gm).exec(pattern)[0];
           self.setState({pattern: self.parsePattern(pattern)});

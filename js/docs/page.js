@@ -106,7 +106,7 @@ define([
                       p({}, pattern.description)
                     ])
                   ),
-                  PatternID === pattern.id ? Pattern({ url: pattern.url }) : ''
+                  PatternID === pattern.id ? Pattern(pattern) : ''
                 ])
              );
            })
