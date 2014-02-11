@@ -86,6 +86,12 @@ Status of builds
 Changelog
 =========
 
+v1.0.2 - 2014-02-11
+-------------------
+
+* updating bootstrap to 3.1.0
+  [garbas]
+
 v1.0.1 - 2014-02-05
 -------------------
 
