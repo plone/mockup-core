@@ -8,7 +8,7 @@ var requirejsOptions = {
     'backbone': 'bower_components/backbone/backbone',
     'bootstrap-collapse': 'bower_components/bootstrap/js/collapse',
     'bootstrap-transition': 'bower_components/bootstrap/js/transition',
-    'expect': 'bower_components/expect/expect',
+    'expect': 'bower_components/expect/index',
     'jquery': 'bower_components/jquery/jquery',
     'marked': 'bower_components/marked/lib/marked',
     'mockup-docs': 'js/docs/app',
