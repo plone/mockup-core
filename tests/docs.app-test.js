@@ -37,9 +37,9 @@ define([
     it("routes to a page", function() {
       this.app.navigate("some-page", opts);
       expect(DocsApp.prototype.openPage.calledTwice).to.be(true);
-      expect(DocsApp.prototype.openPage.calledWithExactly("some-page")).to.be(true);
+      expect(DocsApp.prototype.openPage.calledWithExactly("some-page", null)).to.be(true);
       expect(this.appSpy.calledOnce).to.be(true);
-      expect(this.appSpy.calledWith("openPage", ["some-page"])).to.be(true);
+      expect(this.appSpy.calledWith("openPage", ["some-page", null])).to.be(true);
     });
 
   });

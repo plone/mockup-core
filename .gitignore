@@ -1,11 +1,11 @@
 *.py?
 
+/bower_components
 /build/
 /coverage/
-/node_modules
-/nixenv
 /docs/
+/nixenv
+/node_modules
 /plone/mockup.egg-info/
-/bower_components/
-/test-results.xml
 /sauce_connect.log*
+/test-results.xml

@@ -14,7 +14,7 @@ define([
     });
 
     afterEach(function() {
-      React.unmountAndReleaseReactRootNode(this.$root[0]);
+      React.unmountComponentAtNode(this.$root[0]);
       this.$root.remove();
     });
 
