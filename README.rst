@@ -2,7 +2,7 @@ Mockup Core is a collection of script which are needed to start Mockup_ based
 project.
 
 
-.. contents:
+.. contents::
 
 
 Inside you will find
