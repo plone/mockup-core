@@ -11,7 +11,7 @@ bootstrap-common: clean
 
 bootstrap: bootstrap-common
 	$(NPM) link --prefix=./node_modules
-	NODE_PATH=$(NODE_PATH) $(BOWER) install
+	NODE_PATH=$(NODE_PATH) $(BOWER) install --config.interactive=0
 
 bootstrap-nix: bootstrap-common
 	nix-build default.nix -A build -o nixenv
