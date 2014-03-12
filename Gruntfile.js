@@ -1,4 +1,7 @@
+/* globals module:true */
+
 module.exports = function(grunt) {
+  'use strict';
 
   var requirejsOptions = require('./js/config'),
       karmaConfig = require('./node_modules/karma/lib/config'),
@@ -26,7 +29,8 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    jshint: { all: ['Gruntfile.js', 'js/*.js', 'tests/*.js'] },
+    jshint: { options: { jshintrc: '.jshintrc' }, all: ['Gruntfile.js', 'js/**/*.js', 'tests/**/*.js'] },
+    jscs: { options: { config: '.jscs.json' }, all: ['Gruntfile.js', 'js/**/*.js', 'tests/**/*.js'] },
     karma: {
       options: {
         basePath: './',
@@ -51,8 +55,8 @@ module.exports = function(grunt) {
         ]
       },
       test: { browsers: ['PhantomJS'] },
-      test_once: { singleRun: true, browsers: ['PhantomJS'] },
-      test_dev: {
+      testOnce: { singleRun: true, browsers: ['PhantomJS'] },
+      testDev: {
         browsers: ['Chrome'],
         preprocessors: {},
         reporters: ['dots', 'progress'],
@@ -65,7 +69,7 @@ module.exports = function(grunt) {
           'karma-junit-reporter'
         ]
       },
-      test_ci: {
+      testCI: {
         singleRun: true,
         port: 8000,
         browsers: [
@@ -156,23 +160,12 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-jscs-checker');
   grunt.loadNpmTasks('grunt-karma');
 
-  grunt.registerTask('test', [
-      'jshint',
-      'karma:test'
-      ]);
-  grunt.registerTask('test_once', [
-      'jshint',
-      'karma:test_once'
-      ]);
-  grunt.registerTask('test_dev', [
-      'karma:test_dev'
-      ]);
-  grunt.registerTask('test_ci', [
-      'jshint',
-      'karma:test_once',
-      'karma:test_ci'
-      ]);
+  grunt.registerTask('test', [ 'jshint', 'jscs', 'karma:test' ]);
+  grunt.registerTask('test_once', [ 'jshint', 'jscs', 'karma:testOnce' ]);
+  grunt.registerTask('test_dev', [ 'karma:testDev' ]);
+  grunt.registerTask('test_ci', [ 'jshint', 'jscs', 'karma:testOnce', 'karma:testCI' ]);
 
 };

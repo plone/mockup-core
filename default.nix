@@ -1,7 +1,6 @@
 { mockup-core ? { outPath = ./.; name = "mockup-core"; }
 }:
 let
-  version = '1.1.0';
   pkgs = import <nixpkgs> {};
   bowerPackages = import ./bower.nix { };
   nodePackages = import <nixpkgs/pkgs/top-level/node-packages.nix> {
@@ -12,7 +11,7 @@ let
     generated = ./package.nix;
   };
 in rec {
-  tarball = pkgs.runCommand "mockup-core-${version}.tgz" { buildInputs = [ pkgs.nodejs ]; } ''
+  tarball = pkgs.runCommand "mockup-core-1.1.1.tgz" { buildInputs = [ pkgs.nodejs ]; } ''
     mv `HOME=$PWD npm pack ${mockup-core}` $out
   '';
   build = nodePackages.buildNodePackage {
