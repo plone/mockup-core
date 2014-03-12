@@ -577,15 +577,15 @@
     ];
     passthru.names = [ "boom" ];
   };
-  by-spec."bower"."~1.3.0" =
-    self.by-version."bower"."1.3.0";
-  by-version."bower"."1.3.0" = lib.makeOverridable self.buildNodePackage {
-    name = "bower-1.3.0";
+  by-spec."bower"."~1.3.1" =
+    self.by-version."bower"."1.3.1";
+  by-version."bower"."1.3.1" = lib.makeOverridable self.buildNodePackage {
+    name = "bower-1.3.1";
     src = [
       (fetchurl {
-        url = "http://registry.npmjs.org/bower/-/bower-1.3.0.tgz";
-        name = "bower-1.3.0.tgz";
-        sha1 = "d615ad16859b64c02e3f6b584d3e0d5f669f4063";
+        url = "http://registry.npmjs.org/bower/-/bower-1.3.1.tgz";
+        name = "bower-1.3.1.tgz";
+        sha1 = "60d564e774be4e60631a159566830fce260e469a";
       })
     ];
     buildInputs =
@@ -636,7 +636,7 @@
     ];
     passthru.names = [ "bower" ];
   };
-  "bower" = self.by-version."bower"."1.3.0";
+  "bower" = self.by-version."bower"."1.3.1";
   by-spec."bower-config"."~0.4.3" =
     self.by-version."bower-config"."0.4.5";
   by-version."bower-config"."0.4.5" = lib.makeOverridable self.buildNodePackage {

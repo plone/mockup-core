@@ -4,7 +4,9 @@
   'use strict';
 
   var extend = require('extend'),
-      karmaConfig = require('../node_modules/karma/lib/config'),
+      path = require('path'),
+      appDir = path.dirname(require.main.filename),
+      karmaConfig = require(appDir + '/../../../node_modules/karma/lib/config'),
       MockupGrunt = function (requirejsOptions) { this.init(requirejsOptions); };
 
   MockupGrunt.prototype = {
