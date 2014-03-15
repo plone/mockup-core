@@ -15,14 +15,18 @@ env:
     - BROWSERS="SL_IPad"
     - BROWSERS="SL_Android"
 install:
-  - make bootstrap
+  - travis_retry make bootstrap
 script:
   - make test-once
   - if [ "$TRAVIS_BRANCH" == "master" ]; then make test-ci; fi
 after_success:
   - if [ "$BROWSERS" == "SL_Chrome,SL_Firefox" ]; then ./node_modules/.bin/lcov-result-merger "coverage/**/lcov.info" | ./node_modules/.bin/coveralls; fi
 matrix:
+  fast_finish: true
   allow_failures:
     - env: BROWSERS="SL_IPhone"
     - env: BROWSERS="SL_IPad"
     - env: BROWSERS="SL_Android"
+branches:
+  only:
+    - master
