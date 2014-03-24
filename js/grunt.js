@@ -1,4 +1,4 @@
-/* globals module:true */
+/* globals module:true,process:true */
 
 (function() {
   'use strict';
@@ -7,7 +7,14 @@
       path = require('path'),
       appDir = path.dirname(require.main.filename),
       karmaConfig = require(appDir + '/../../../node_modules/karma/lib/config'),
-      MockupGrunt = function (requirejsOptions) { this.init(requirejsOptions); };
+      MockupGrunt = function (requirejsOptions) { this.init(requirejsOptions); },
+      BROWSERS = process.env.BROWSERS;
+
+  if (BROWSERS) {
+    BROWSERS = BROWSERS.split(',');
+  } else {
+    BROWSERS = [ 'SL_Chrome', 'SL_Firefox' ];
+  }
 
   MockupGrunt.prototype = {
 
@@ -304,19 +311,7 @@
             reporters: ['junit', 'coverage', 'saucelabs'],
             junitReporter: { outputFile: 'test-results.xml' },
             sauceLabs: { testName: 'Mockup', startConnect: true },
-            browsers: [
-              'SL_Chrome',
-              'SL_Firefox',
-              //'SL_Opera',
-              //'SL_Safari',
-              //'SL_IE_8',
-              //'SL_IE_9',
-              //'SL_IE_10',
-              //'SL_IE_11'
-              //'SL_IPhone',
-              //'SL_IPad',
-              //'SL_Android'
-            ],
+            browsers: BROWSERS,
             customLaunchers: {
               'SL_Chrome': { base: 'SauceLabs', browserName: 'chrome', platform: 'Windows 8', version: '31' },
               'SL_Firefox': { base: 'SauceLabs', browserName: 'firefox', platform: 'Windows 8', version: '26' },
