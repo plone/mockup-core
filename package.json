@@ -1,6 +1,6 @@
 {
   "name": "mockup-core",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Plone CMS Mockup Core",
   "homepage": "http://plone.github.io/mockup",
   "devDependencies": {
@@ -28,6 +28,7 @@
     "karma-sauce-launcher": "~0.2.0",
     "karma-script-launcher": "~0.1.0",
     "lcov-result-merger": "~0.0.2",
+    "less": "~1.7.0",
     "mocha": "~1.17.1",
     "requirejs": "~2.1.11"
   },

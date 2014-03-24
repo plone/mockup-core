@@ -3,10 +3,12 @@
 (function() {
   'use strict';
 
-  var extend = require('extend'),
+  var fs = require('fs'),
+      less = require('less'),
+      extend = require('extend'),
       path = require('path'),
-      appDir = path.dirname(require.main.filename),
-      karmaConfig = require(appDir + '/../../../node_modules/karma/lib/config'),
+      appDir = process.cwd(),
+      karmaConfig = require(appDir + '/node_modules/karma/lib/config'),
       MockupGrunt = function (requirejsOptions) { this.init(requirejsOptions); },
       BROWSERS = process.env.BROWSERS;
 
@@ -49,10 +51,28 @@
       },
       less: {
         registerBundle: function(name, customGruntConfig, bundleOptions, sections) {
-          this.gruntConfig.less = this.gruntConfig.less || {};
-          this.gruntConfig.less[name] = this.gruntConfig.less[name] || {};
-          this.gruntConfig.less[name].files = this.gruntConfig.less[name].files || {};
-          this.gruntConfig.less[name].files[bundleOptions.path + name + '.min.css'] = 'less/' + name + '.less';
+          var gruntConfig = this.gruntConfig;
+
+          gruntConfig.less = gruntConfig.less || {};
+          gruntConfig.less[name] = gruntConfig.less[name] || {};
+          gruntConfig.less[name].files = gruntConfig.less[name].files || {};
+          gruntConfig.less[name].files[bundleOptions.path + name + '.min.css'] = 'less/' + name + '.less';
+
+
+          gruntConfig.watch = gruntConfig.watch || {};
+          gruntConfig.watch['less-' + name] = gruntConfig.watch['less-' + name] || {
+            files: [ 'less/' + name + '.less' ],
+            tasks: [ 'less:' + name ]
+          };
+
+          var parser = new(less.Parser)({ syncImport: true, paths: ['less'], filename: name + '.less' }),
+              bundleFile = fs.readFileSync('less/' + name + '.less', { encoding: 'utf-8' });
+
+          parser.parse(bundleFile, function() {
+            for(var file in parser.imports.files) {
+              gruntConfig.watch['less-' + name].files.push(file);
+            }
+          });
         }
       },
       copy: {
@@ -172,6 +192,9 @@
       /*
       * provide (but not include) all files in "tests/" and "js/" folder
       * those files will be loaded by requirejs at later points
+      *
+      * TODO: simplify the pattern to include everything inside js/ and
+      * tests/ folders.
       */
       this.files = this.files.concat([
         {pattern: 'tests/example-resource*', included: false},
@@ -355,6 +378,7 @@
       grunt.loadNpmTasks('grunt-contrib-less');
       grunt.loadNpmTasks('grunt-contrib-requirejs');
       grunt.loadNpmTasks('grunt-contrib-uglify');
+      grunt.loadNpmTasks('grunt-contrib-watch');
       grunt.loadNpmTasks('grunt-jscs-checker');
       grunt.loadNpmTasks('grunt-karma');
       grunt.loadNpmTasks('grunt-sed');
