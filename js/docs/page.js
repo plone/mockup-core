@@ -97,7 +97,7 @@ define([
             page.patterns.map(function(_pattern) {
               return (
                 div({}, [
-                  div({ key: _pattern.id, className: 'col-xs-12 col-sm-4 col-md-3' },
+                  div({ key: _pattern.id, id: _pattern.id, className: 'col-xs-12 col-sm-4 col-md-3' },
                     a({
                       className: patternID === _pattern.id ? 'mockup-pattern-tile active' : 'mockup-pattern-tile',
                       href: '#' + page.id + '/' + _pattern.id
