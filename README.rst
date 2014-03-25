@@ -86,6 +86,42 @@ Status of builds
 Changelog
 =========
 
+v1.2.0 - 2014-03-25
+-------------------
+
+* karma/lib/config.js now also found when using nix
+  [garbas]
+
+* run multiple travis jobs for 2 browsers at the time
+  [garbas]
+
+* fixed typo in js/docs/view.js
+  [garbas]
+
+* add watcher for less files
+  [garbas]
+
+* make sure the router can find the pattern div
+  [davisagli]
+
+v1.1.1 - 2014-03-12
+-------------------
+
+* jscs linter added
+  [garbas]
+
+* fix grunthelper script
+  [garbas]
+
+v1.1.0 - 2014-03-12
+-------------------
+
+* update to bootstrap 3.1.0
+  [garbas]
+
+* move grunt helper script to mockup-core (from mockup) repository
+  [garbas]
+
 v1.0.1 - 2014-02-05
 -------------------
 

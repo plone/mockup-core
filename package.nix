@@ -1466,7 +1466,7 @@
       (fetchgit {
         url = "git://github.com/michaelficarra/cscodegen.git";
         rev = "73fd7202ac086c26f18c9d56f025b18b3c6f5383";
-        sha256 = "cb527b00ac305ebc6ab3f59ff4e99def7646b417fdd9e35f0186c8ee41cd0829";
+        sha256 = "1y8n0h6fm93bg0p2c4fxgx8xs3z2zvprxwdfj3lpdh9hnllipc8a";
       })
     ];
     buildInputs =
@@ -3999,6 +3999,7 @@
     ];
     passthru.names = [ "less" ];
   };
+  "less" = self.by-version."less"."1.7.0";
   by-spec."lodash"."~0.9.2" =
     self.by-version."lodash"."0.9.2";
   by-version."lodash"."0.9.2" = lib.makeOverridable self.buildNodePackage {

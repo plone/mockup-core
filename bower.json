@@ -1,6 +1,6 @@
 {
   "name": "mockup-core",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Mockup Core",
   "dependencies": {
     "backbone": "1.1.2",

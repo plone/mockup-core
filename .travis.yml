@@ -8,9 +8,12 @@ env:
     - SAUCE_CONNECT_READY_FILE=/tmp/sauce-connect-ready
   matrix:
     - BROWSERS="SL_Chrome,SL_Firefox"
-    - BROWSERS="SL_IE_8,SL_IE_9,SL_IE_10,SL_IE_11"
+    - BROWSERS="SL_IE_8,SL_IE_9"
+    - BROWSERS="SL_IE_10,SL_IE_11"
     - BROWSERS="SL_Opera,SL_Safari"
-    - BROWSERS="SL_IPhone,SL_IPad,SL_Android"
+    - BROWSERS="SL_IPhone"
+    - BROWSERS="SL_IPad"
+    - BROWSERS="SL_Android"
 install:
   - make bootstrap
 script:
@@ -20,4 +23,6 @@ after_success:
   - if [ "$BROWSERS" == "SL_Chrome,SL_Firefox" ]; then ./node_modules/.bin/lcov-result-merger "coverage/**/lcov.info" | ./node_modules/.bin/coveralls; fi
 matrix:
   allow_failures:
-    - env: BROWSERS="SL_IPhone,SL_IPad,SL_Android"
+    - env: BROWSERS="SL_IPhone"
+    - env: BROWSERS="SL_IPad"
+    - env: BROWSERS="SL_Android"

@@ -64,7 +64,7 @@ define([
             div({ className: 'container' }, [
               div({ className: 'row' }, [
                 div({ className: 'col-xs-12 col-sm-6 mockup-credits' }, [
-                  p({}, ['Build by ', a({ href: 'http://plone.org' }, 'Plone'),' community.']),
+                  p({}, ['Built by ', a({ href: 'http://plone.org' }, 'Plone'),' community.']),
                   p({}, ['Code and documentation licensed under ', a({ href: 'http://www.opensource.org/licenses/mit-license.php' }, 'MIT'),'.']),
                 ]),
                 div({ className: 'col-xs-12 col-sm-6' },
