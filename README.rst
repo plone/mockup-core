@@ -86,6 +86,30 @@ Status of builds
 Changelog
 =========
 
+v1.2.1 - 2014-03-30
+-------------------
+
+* add selectivizr, a utility that emulates CSS3 pseudo-classes and attribute
+  selectors in Internet Explorer 6-8
+  [garbas]
+
+* all files in tests/ and js/ folder are now included in karma test runner
+  [garbas]
+
+* update node packages:
+    - coveralls: 2.8.0 -> 2.10.0
+    - grunt: 0.4.3 -> 0.4.4
+    - grunt-contrib-jshint: 0.8.0 -> 0.9.2
+    - grunt-contrib-less: 0.10.0 -> 0.11.0
+    - grunt-jscs-checker: 0.4.0 -> 0.4.1
+    - grunt-karma: 0.8.0 -> 0.8.2
+    - karma: 0.12.0 -> 0.12.1
+    - karma-coverage: 0.2.0 -> 0.2.1
+    - karma-mocha: 0.1.1 -> 0.1.3
+    - karma-sauce-launcher: 0.2.0 -> 0.2.4
+    - mocha: 1.17.1 -> 1.18.2
+
+
 v1.2.0 - 2014-03-25
 -------------------
 
@@ -104,6 +128,7 @@ v1.2.0 - 2014-03-25
 * make sure the router can find the pattern div
   [davisagli]
 
+
 v1.1.1 - 2014-03-12
 -------------------
 
@@ -113,6 +138,7 @@ v1.1.1 - 2014-03-12
 * fix grunthelper script
   [garbas]
 
+
 v1.1.0 - 2014-03-12
 -------------------
 
@@ -121,6 +147,7 @@ v1.1.0 - 2014-03-12
 
 * move grunt helper script to mockup-core (from mockup) repository
   [garbas]
+
 
 v1.0.1 - 2014-02-05
 -------------------
@@ -133,10 +160,12 @@ v1.0.1 - 2014-02-05
   and pattern via requirejs name registered in requirejs paths.
   [garbas]
 
+
 v1.0.0 - 2014-01-21
 -------------------
 
 * Initial release.
   [garbas]
+
 
 .. _Mockup: https://github.com/plone/mockup
