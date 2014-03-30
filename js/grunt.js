@@ -41,7 +41,6 @@
           this.gruntConfig.uglify[name] = this.gruntConfig.uglify[name] || {};
           this.gruntConfig.uglify[name].files = this.gruntConfig.uglify[name].files || {};
           this.gruntConfig.uglify[name].files[bundleOptions.path + name + '.js'] = [
-            'node_modules/grunt-contrib-less/node_modules/less/dist/less-1.6.1.js',
             'bower_components/domready/ready.js',
             'node_modules/requirejs/require.js',
             'bower_components/jquery/jquery.js',
@@ -153,6 +152,7 @@
         * include initial framework (mocha and requirejs) with html5
         * shims/shams/polyfills
         */
+        'bower_components/selectivizr/selectivizr.js',
         'bower_components/es5-shim/es5-shim.js',
         'bower_components/es5-shim/es5-sham.js',
         'bower_components/console-polyfill/index.js',
@@ -160,6 +160,7 @@
         'node_modules/karma-mocha/lib/adapter.js',
         'node_modules/requirejs/require.js',
         'node_modules/karma-requirejs/lib/adapter.js',
+
         /*
         * include requirejs configuration
         */
@@ -197,19 +198,8 @@
       * tests/ folders.
       */
       this.files = this.files.concat([
-        {pattern: 'tests/example-resource*', included: false},
-        {pattern: 'tests/json/*.json', included: false},
-        {pattern: 'tests/fakeserver*', included: false},
-        {pattern: 'tests/*-test.js', included: false},
-        {pattern: 'tests/**/*-test.js', included: false},
-        {pattern: 'js/ui/**/*.js', included: false},
-        {pattern: 'js/ui/**/*.xml', included: false},
-        {pattern: 'js/patterns/structure/**/*.js', included: false},
-        {pattern: 'js/patterns/structure/**/*.xml', included: false},
-        {pattern: 'js/patterns/filemanager/**/*.xml', included: false},
-        {pattern: 'js/patterns/filemanager/**/*.js', included: false},
-        {pattern: 'js/patterns/tinymce/**/*.xml', included: false},
-        {pattern: 'js/patterns/tinymce/**/*.js', included: false},
+        {pattern: 'tests/**/*', included: false},
+        {pattern: 'js/**/*', included: false}
       ]);
 
 
