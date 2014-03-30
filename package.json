@@ -20,7 +20,7 @@
     "grunt-sed": "~0.1.1",
     "karma": "~0.12.1",
     "karma-chrome-launcher": "~0.1.2",
-    "karma-coverage": "~0.2.1",
+    "karma-js-coverage": "~0.4.0",
     "karma-junit-reporter": "~0.2.1",
     "karma-mocha": "~0.1.3",
     "karma-phantomjs-launcher": "~0.1.2",
