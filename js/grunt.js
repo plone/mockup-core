@@ -326,17 +326,17 @@
             sauceLabs: { testName: 'Mockup', startConnect: true },
             browsers: BROWSERS,
             customLaunchers: {
-              'SL_Chrome': { base: 'SauceLabs', browserName: 'chrome', platform: 'Windows 8', version: '31' },
-              'SL_Firefox': { base: 'SauceLabs', browserName: 'firefox', platform: 'Windows 8', version: '26' },
+              'SL_Chrome': { base: 'SauceLabs', browserName: 'chrome', platform: 'Windows 8.1', version: '33' },
+              'SL_Firefox': { base: 'SauceLabs', browserName: 'firefox', platform: 'Windows 8.1', version: '28' },
               'SL_Opera': { base: 'SauceLabs', browserName: 'opera', platform: 'Windows 7', version: '12' },
-              'SL_Safari': { base: 'SauceLabs', browserName: 'safari', platform: 'Mac 10.8', version: '6' },
+              'SL_Safari': { base: 'SauceLabs', browserName: 'safari', platform: 'Mac 10.9', version: '7' },
               'SL_IE_8': { base: 'SauceLabs', browserName: 'internet explorer', platform: 'Windows 7', version: '8' },
-              'SL_IE_9': { base: 'SauceLabs', browserName: 'internet explorer', platform: 'Windows 2008', version: '9' },
-              'SL_IE_10': { base: 'SauceLabs', browserName: 'internet explorer', platform: 'Windows 2012', version: '10' },
+              'SL_IE_9': { base: 'SauceLabs', browserName: 'internet explorer', platform: 'Windows 7', version: '9' },
+              'SL_IE_10': { base: 'SauceLabs', browserName: 'internet explorer', platform: 'Windows 7', version: '10' },
               'SL_IE_11': { base: 'SauceLabs', browserName: 'internet explorer', platform: 'Windows 8.1', version: '11' },
-              'SL_IPhone': { base: 'SauceLabs', browserName: 'iphone', platform: 'OS X 10.8', version: '6.1' },
-              'SL_IPad': { base: 'SauceLabs', browserName: 'ipad', platform: 'OS X 10.8', version: '6.1' },
-              'SL_Android': { base: 'SauceLabs', browserName: 'android', platform: 'Linux', version: '4.0' }
+              'SL_IPhone': { base: 'SauceLabs', browserName: 'iphone', platform: 'OS X 10.9', version: '7.1' },
+              'SL_IPad': { base: 'SauceLabs', browserName: 'ipad', platform: 'OS X 10.9', version: '7.1' },
+              'SL_Android': { base: 'SauceLabs', browserName: 'android', platform: 'Linux', version: '4.3' }
             }
           }
         },

@@ -86,6 +86,17 @@ Status of builds
 Changelog
 =========
 
+v1.2.2 - 2014-03-31
+-------------------
+
+* update Saucelabs browser definitions
+  [garbas]
+
+* update bower packages:
+   - sinon: 1.8.2 -> 1.9.0
+
+
+
 v1.2.1 - 2014-03-30
 -------------------
 
