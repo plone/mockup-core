@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "expect": "0.3.1",
-    "sinonjs": "1.8.2"
+    "sinonjs": "1.9.0"
   },
   "resolutions": {
     "jquery": "1.8.3"
