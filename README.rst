@@ -86,6 +86,13 @@ Status of builds
 Changelog
 =========
 
+v1.2.4 - 2014-04-19
+-------------------
+
+* tinymce icons/font packaging fixed
+  [garbas]
+
+
 v1.2.3 - 2014-03-31
 -------------------
 
