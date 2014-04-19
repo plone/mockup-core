@@ -84,10 +84,13 @@
               expand: true, cwd: 'bower_components/bootstrap/dist/fonts/', src: 'glyphicons-halflings-regular.*', dest: bundleOptions.path,
               rename: function(dest, src) { return dest + name + '-bootstrap-' + src; }
             }, {
-              expand: true, cwd: 'lib/tinymce/skins/lightgray/fonts/', src: 'icomoon.*', dest: bundleOptions.path,
-              rename: function(dest, src) { return dest + name + '-tinymce-' + src; }
+              expand: true, cwd: 'lib/tinymce/skins/lightgray/fonts/', src: 'tinymce*', dest: bundleOptions.path,
+              rename: function(dest, src) { return dest + name + '-tinymce-font-' + src; }
             }, {
-              expand: true, cwd: 'lib/tinymce/skins/lightgray/img/', src: 'loader.gif', dest: bundleOptions.path,
+              expand: true, cwd: 'lib/tinymce/skins/lightgray/img/', src: '*', dest: bundleOptions.path,
+              rename: function(dest, src) { return dest + name + '-tinymce-img-' + src; }
+            }, {
+              expand: true, cwd: 'lib/tinymce/skins/lightgray/', src: 'content.min.css', dest: bundleOptions.path,
               rename: function(dest, src) { return dest + name + '-tinymce-' + src; }
             }, {
               expand: true, cwd: 'bower_components/jqtree/', src: 'jqtree-circle.png', dest: bundleOptions.path,
@@ -123,15 +126,25 @@
             pattern: 'url\\(\'select2',
             replacement: 'url(\'' + bundleOptions.url + '-select2-select2'
           };
-          this.gruntConfig.sed[name + '-tinymce-icomoon'] = {
+          this.gruntConfig.sed[name + '-tinymce-fonts'] = {
             path: bundleOptions.path + name + '.min.css',
-            pattern: 'url\\(\'fonts/icomoon',
-            replacement: 'url(\'' + bundleOptions.url + '-tinymce-icomoon'
+            pattern: 'url\\(\'fonts/tinymce',
+            replacement: 'url(\'' + bundleOptions.url + '-tinymce-font-tinymce'
           };
-          this.gruntConfig.sed[name + '-tinymce-loader'] = {
+          this.gruntConfig.sed[name + '-tinymce-img-loader'] = {
             path: bundleOptions.path + name + '.min.css',
             pattern: 'url\\(\'img/loader.gif',
-            replacement: 'url(\'' + bundleOptions.url + '-tinymce-loader.gif'
+            replacement: 'url(\'' + bundleOptions.url + '-tinymce-img-loader.gif'
+          };
+          this.gruntConfig.sed[name + '-tinymce-img-anchor'] = {
+            path: bundleOptions.path + name + '.min.css',
+            pattern: 'url\\(\'img/anchor.gif',
+            replacement: 'url(\'' + bundleOptions.url + '-tinymce-img-anchor.gif'
+          };
+          this.gruntConfig.sed[name + '-tinymce-img-object'] = {
+            path: bundleOptions.path + name + '.min.css',
+            pattern: 'url\\(\'img/object.gif',
+            replacement: 'url(\'' + bundleOptions.url + '-tinymce-img-object.gif'
           };
           this.gruntConfig.sed[name + '-jqtree-circle'] = {
             path: bundleOptions.path + name + '.min.css',

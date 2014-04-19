@@ -1,6 +1,6 @@
 {
   "name": "mockup-core",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Plone CMS Mockup Core",
   "homepage": "http://plone.github.io/mockup",
   "devDependencies": {
