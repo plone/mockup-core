@@ -11,11 +11,11 @@ let
     generated = ./package.nix;
   };
 in rec {
-  tarball = pkgs.runCommand "mockup-core-1.2.4.tgz" { buildInputs = [ pkgs.nodejs ]; } ''
+  tarball = pkgs.runCommand "mockup-core-1.2.5.tgz" { buildInputs = [ pkgs.nodejs ]; } ''
     mv `HOME=$PWD npm pack ${mockup-core}` $out
   '';
   build = nodePackages.buildNodePackage {
-    name = "mockup-core-1.2.4";
+    name = "mockup-core-1.2.5";
     src = [ tarball ];
     buildInputs = [ ];
     deps = with nodePackages; [

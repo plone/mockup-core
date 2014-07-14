@@ -86,6 +86,14 @@ Status of builds
 Changelog
 =========
 
+v1.2.5 - unreleased
+-------------------
+
+* Start PhantomJS without disk caches enabled to be sure to load the latest
+  versions of files.
+  [thet]
+
+
 v1.2.4 - 2014-04-19
 -------------------
 
