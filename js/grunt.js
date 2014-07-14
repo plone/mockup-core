@@ -314,7 +314,13 @@
             ]
           },
           test: {
-            browsers: ['PhantomJS']
+            browsers: ['PhantomJS_custom'],
+            customLaunchers: {
+              'PhantomJS_custom': {
+                base: 'PhantomJS',
+                flags: ['--disk-cache=false']
+              }
+            }
           },
           testOnce: {
             singleRun: true,
