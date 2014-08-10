@@ -46,6 +46,9 @@
             sourceMap: true
           };
           this.gruntConfig.uglify[name].files[bundleOptions.path + name + '.min.js'] = [
+            'build/' + name + '.js'
+          ];
+          this.gruntConfig.uglify[name].files[bundleOptions.path + name + '.dev.js'] = [
             'bower_components/domready/ready.js',
             'node_modules/requirejs/require.js' ,
             'bower_components/jquery/jquery.js',
@@ -385,8 +388,8 @@
       grunt.loadNpmTasks('grunt-contrib-copy');
       grunt.loadNpmTasks('grunt-contrib-jshint');
       grunt.loadNpmTasks('grunt-contrib-less');
-      grunt.loadNpmTasks('grunt-contrib-uglify');
       grunt.loadNpmTasks('grunt-contrib-requirejs');
+      grunt.loadNpmTasks('grunt-contrib-uglify');
       grunt.loadNpmTasks('grunt-contrib-watch');
       grunt.loadNpmTasks('grunt-jscs-checker');
       grunt.loadNpmTasks('grunt-karma');
