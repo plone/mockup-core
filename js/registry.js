@@ -9,7 +9,13 @@ define([
 
     warn: function(msg) {
       /* istanbul ignore next */
-      if (window.DEBUG && window.console) {
+      if (window.DEBUG) {
+        Registry.error(msg);
+      }
+    },
+
+    error: function(msg){
+      if (window.console) {
         console.warn(msg);
       }
     },
@@ -59,7 +65,8 @@ define([
             pattern = new Registry.patterns[patternName]($el,
                 Registry.getOptions($el, patternName, options));
           } catch (e) {
-            Registry.warn('Failed while initializing "' + patternName + '" pattern.');
+            Registry.error('Failed while initializing "' + patternName + '" pattern.');
+            throw(e);
           }
         }
         $el.data('pattern-' + patternName, pattern);
@@ -110,7 +117,7 @@ define([
 
           if (method) {
             if (pattern[method] === undefined) {
-              Registry.warn('Method "' + method + '" does not exists.');
+              Registry.error('Method "' + method + '" does not exists.');
               return false;
             }
             if (method.charAt(0) === '_') {
