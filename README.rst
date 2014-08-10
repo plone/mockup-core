@@ -86,6 +86,12 @@ Status of builds
 Changelog
 =========
 
+v1.2.7 - 2014-08-10
+-------------------
+
+* correctly generate js min and dev files with maps
+  [vangheem]
+
 v1.2.6 - 2014-08-10
 -------------------
 
