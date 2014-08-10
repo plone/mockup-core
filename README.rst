@@ -86,6 +86,16 @@ Status of builds
 Changelog
 =========
 
+v1.2.6 - 2014-08-10
+-------------------
+
+* fix tests to work with latest mockup
+  [vangheem]
+
+* do not use jscs anymore
+  [vangheem]
+
+
 v1.2.4 - 2014-04-19
 -------------------
 
