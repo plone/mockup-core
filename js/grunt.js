@@ -217,7 +217,8 @@
       */
       this.files = this.files.concat([
         {pattern: 'tests/**/*', included: false},
-        {pattern: 'js/**/*', included: false}
+        {pattern: 'js/**/*', included: false},
+        {pattern: 'patterns/**/*', included: false}
       ]);
 
 
