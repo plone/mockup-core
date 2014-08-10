@@ -26,12 +26,13 @@
           this.gruntConfig.requirejs = this.gruntConfig.requirejs || {};
           this.gruntConfig.requirejs[name] = this.gruntConfig.requirejs[name] || {};
           this.gruntConfig.requirejs[name].options = this.gruntConfig.requirejs[name].options || {};
+
           this.gruntConfig.requirejs[name].options = {
             name: 'node_modules/requirejs/require.js',
             include: ['mockup-bundles-' + name].concat(bundleOptions.extraInclude || []),
             exclude: bundleOptions.exclude || [],
             insertRequire: ['mockup-bundles-' + name],
-            out: bundleOptions.path + name + '.min.js'
+            out: bundleOptions.path + name + '.js'
           };
         }
       },
@@ -40,9 +41,13 @@
           this.gruntConfig.uglify = this.gruntConfig.uglify || {};
           this.gruntConfig.uglify[name] = this.gruntConfig.uglify[name] || {};
           this.gruntConfig.uglify[name].files = this.gruntConfig.uglify[name].files || {};
-          this.gruntConfig.uglify[name].files[bundleOptions.path + name + '.js'] = [
+          this.gruntConfig.uglify[name].options = {
+            mangle: false,
+            sourceMap: true
+          };
+          this.gruntConfig.uglify[name].files[bundleOptions.path + name + '.min.js'] = [
             'bower_components/domready/ready.js',
-            'node_modules/requirejs/require.js',
+            'node_modules/requirejs/require.js' ,
             'bower_components/jquery/jquery.js',
             'js/bundles/' + name + '_develop.js'
           ];
@@ -278,10 +283,10 @@
         bundles.push('bundle-' + name);
         grunt.registerTask('bundle-' + name, this.bundles[name]);
       }
-      grunt.registerTask('test', [ 'jshint', 'jscs', 'karma:test' ]);
-      grunt.registerTask('test_once', [ 'jshint', 'jscs', 'karma:testOnce' ]);
+      grunt.registerTask('test', [ 'jshint', 'karma:test' ]);
+      grunt.registerTask('test_once', [ 'jshint', 'karma:testOnce' ]);
       grunt.registerTask('test_dev', [ 'karma:testDev' ]);
-      grunt.registerTask('test_ci', [ 'jshint', 'jscs', 'karma:testCI'].concat(bundles));
+      grunt.registerTask('test_ci', [ 'jshint', 'karma:testCI'].concat(bundles));
 
       /*
        * TODO: add description
@@ -379,8 +384,8 @@
       grunt.loadNpmTasks('grunt-contrib-copy');
       grunt.loadNpmTasks('grunt-contrib-jshint');
       grunt.loadNpmTasks('grunt-contrib-less');
-      grunt.loadNpmTasks('grunt-contrib-requirejs');
       grunt.loadNpmTasks('grunt-contrib-uglify');
+      grunt.loadNpmTasks('grunt-contrib-requirejs');
       grunt.loadNpmTasks('grunt-contrib-watch');
       grunt.loadNpmTasks('grunt-jscs-checker');
       grunt.loadNpmTasks('grunt-karma');
