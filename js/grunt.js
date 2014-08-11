@@ -308,7 +308,7 @@
             coverageReporter: { type : 'lcov', dir : 'coverage/' },
             port: 9876,
             colors: true,
-            logLevel: karmaConfig.DEBUG_INFO,
+            logLevel: karmaConfig.LOG_DEBUG,
             browserNoActivityTimeout: 200000,
             autoWatch: true,
             captureTimeout: 60000,
