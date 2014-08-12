@@ -297,7 +297,6 @@
        */
       grunt.initConfig(extend(true, {
         jshint: { options: { jshintrc: '.jshintrc' }, all: ['Gruntfile.js', 'js/**/*.js', 'tests/**/*.js'] },
-        jscs: { options: { config: '.jscs.json' }, all: ['Gruntfile.js', 'js/**/*.js', 'tests/**/*.js'] },
         karma: {
           options: {
             basePath: './',
@@ -391,7 +390,6 @@
       grunt.loadNpmTasks('grunt-contrib-requirejs');
       grunt.loadNpmTasks('grunt-contrib-uglify');
       grunt.loadNpmTasks('grunt-contrib-watch');
-      grunt.loadNpmTasks('grunt-jscs-checker');
       grunt.loadNpmTasks('grunt-karma');
       grunt.loadNpmTasks('grunt-sed');
 
