@@ -89,6 +89,9 @@ Changelog
 v1.2.9 - 2014-08-12
 -------------------
 
+* dependency version upgrades.
+  [thet]
+
 * upgrade to jQuery 1.11.1
   [thet]
 
