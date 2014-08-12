@@ -304,7 +304,7 @@
             frameworks: [],
             files: this.files,
             preprocessors: { 'js/**/*.js': 'coverage' },
-            reporters: ['dots', 'progress', 'coverage'],
+            reporters: ['dots', 'progress', 'coverage', 'spec'],
             coverageReporter: { type : 'lcov', dir : 'coverage/' },
             port: 9876,
             colors: true,
@@ -319,7 +319,9 @@
               'karma-sauce-launcher',
               'karma-chrome-launcher',
               'karma-phantomjs-launcher',
-              'karma-junit-reporter'
+              'karma-junit-reporter',
+              'karma-spec-reporter'
+
             ]
           },
           test: {
