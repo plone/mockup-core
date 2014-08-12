@@ -8,7 +8,7 @@
       extend = require('extend'),
       path = require('path'),
       appDir = process.cwd(),
-      karmaConfig = require(appDir + '/node_modules/karma/lib/config'),
+      karmaConstants = require(appDir + '/node_modules/karma/lib/constants'),
       MockupGrunt = function (requirejsOptions) { this.init(requirejsOptions); },
       BROWSERS = process.env.BROWSERS;
 
@@ -303,11 +303,12 @@
             frameworks: [],
             files: this.files,
             preprocessors: { 'js/**/*.js': 'coverage' },
-            reporters: ['dots', 'progress', 'coverage'],
+            reporters: ['dots', 'progress', 'coverage', 'spec'],
             coverageReporter: { type : 'lcov', dir : 'coverage/' },
             port: 9876,
             colors: true,
-            logLevel: karmaConfig.DEBUG_INFO,
+            // logLevel: karmaConstants.LOG_DEBUG,
+            logLevel: karmaConstants.LOG_INFO,
             browserNoActivityTimeout: 200000,
             autoWatch: true,
             captureTimeout: 60000,
@@ -318,7 +319,9 @@
               'karma-sauce-launcher',
               'karma-chrome-launcher',
               'karma-phantomjs-launcher',
-              'karma-junit-reporter'
+              'karma-junit-reporter',
+              'karma-spec-reporter'
+
             ]
           },
           test: {
