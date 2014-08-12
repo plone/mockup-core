@@ -8,7 +8,7 @@
       extend = require('extend'),
       path = require('path'),
       appDir = process.cwd(),
-      karmaConfig = require(appDir + '/node_modules/karma/lib/config'),
+      karmaConstants = require(appDir + '/node_modules/karma/lib/constants'),
       MockupGrunt = function (requirejsOptions) { this.init(requirejsOptions); },
       BROWSERS = process.env.BROWSERS;
 
@@ -308,7 +308,8 @@
             coverageReporter: { type : 'lcov', dir : 'coverage/' },
             port: 9876,
             colors: true,
-            logLevel: karmaConfig.LOG_DEBUG,
+            // logLevel: karmaConstants.LOG_DEBUG,
+            logLevel: karmaConstants.LOG_INFO,
             browserNoActivityTimeout: 200000,
             autoWatch: true,
             captureTimeout: 60000,
