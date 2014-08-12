@@ -66,7 +66,9 @@ define([
                 Registry.getOptions($el, patternName, options));
           } catch (e) {
             Registry.error('Failed while initializing "' + patternName + '" pattern.');
-            throw(e);
+            if(window.DEBUG) {
+                throw(e);
+            }
           }
         }
         $el.data('pattern-' + patternName, pattern);

@@ -86,6 +86,12 @@ Status of builds
 Changelog
 =========
 
+v1.2.8 - 2014-08-11
+-------------------
+
+* finish removing jscs
+  [vangheem]
+
 v1.2.7 - 2014-08-10
 -------------------
 
