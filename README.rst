@@ -86,6 +86,12 @@ Status of builds
 Changelog
 =========
 
+v1.2.9 - 2014-08-12
+-------------------
+
+* fix tests and better karm reporting
+  [thet]
+
 v1.2.8 - 2014-08-11
 -------------------
 
