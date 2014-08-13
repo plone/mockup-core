@@ -86,11 +86,14 @@ Status of builds
 Changelog
 =========
 
-v1.2.9 - 2014-08-12
--------------------
+v1.2.10 - unreleased
+--------------------
 
 * dependency version upgrades.
   [thet]
+
+v1.2.9 - 2014-08-12
+-------------------
 
 * upgrade to jQuery 1.11.1
   [thet]
