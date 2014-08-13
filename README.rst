@@ -86,7 +86,7 @@ Status of builds
 Changelog
 =========
 
-v1.2.10 - unreleased
+v1.2.10 - 2014-08-13
 --------------------
 
 * dependency version upgrades.
