@@ -86,6 +86,12 @@ Status of builds
 Changelog
 =========
 
+v1.2.11 - 2014-08-13
+--------------------
+
+* only jshint in test directory
+  [vangheem]
+
 v1.2.10 - 2014-08-13
 --------------------
 

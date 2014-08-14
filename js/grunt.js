@@ -296,7 +296,7 @@
        * TODO: add description
        */
       grunt.initConfig(extend(true, {
-        jshint: { options: { jshintrc: '.jshintrc' }, all: ['Gruntfile.js', 'js/**/*.js', 'tests/**/*.js'] },
+        jshint: { options: { jshintrc: '.jshintrc' }, all: ['Gruntfile.js', 'js/**/*.js', 'tests/*.js'] },
         karma: {
           options: {
             basePath: './',
