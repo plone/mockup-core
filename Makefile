@@ -9,9 +9,16 @@ NODE_PATH = ./node_modules
 bootstrap-common: clean
 	mkdir -p build
 
-bootstrap: bootstrap-common
-	$(NPM) link --prefix=./node_modules
+bootstrap: clean bootstrap-common
+	@echo $(NODE_VERSION)
+ifeq (,$(findstring 1.4, $(NPM_VERSION)))
+	# for node < v0.10.30, npm < 1.4.x
+	$(NPM) link --prefix=$(NODE_PATH)
+else
+	$(NPM) link
+endif
 	NODE_PATH=$(NODE_PATH) $(BOWER) install --config.interactive=0
+	NODE_PATH=$(NODE_PATH) $(GRUNT) sed:bootstrap
 
 bootstrap-nix: bootstrap-common
 	nix-build default.nix -A build -o nixenv
