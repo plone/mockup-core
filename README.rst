@@ -86,6 +86,12 @@ Status of builds
 Changelog
 =========
 
+v1.2.12 - unreleased
+--------------------
+
+* Fix more TinyMCE related paths.
+  [thet]
+
 v1.2.11 - 2014-08-13
 --------------------
 
