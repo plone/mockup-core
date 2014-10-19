@@ -61,6 +61,14 @@ All issues about Mockup_ related projects are tracked at:
 https://github.com/plone/mockup/issues
 
 
+Credits
+=======
+
+Originally created by `Rok Garbas <http://garbas.si/>`_ using parts of `Patterns
+library <http://patternslib.com/>`_. Now maintained by the `Plone Foundation
+<http://plone.org/>`_.
+
+
 Status of builds
 ================
 
