@@ -89,6 +89,9 @@ Changelog
 v1.2.12 - unreleased
 --------------------
 
+* Move Mockup Pattern related resources handling to the Mockup repository.
+  [thet]
+
 * Fix more TinyMCE related paths.
   [thet]
 

@@ -91,27 +91,6 @@
             {
               expand: true, cwd: 'bower_components/bootstrap/dist/fonts/', src: 'glyphicons-halflings-regular.*', dest: bundleOptions.path,
               rename: function(dest, src) { return dest + name + '-bootstrap-' + src; }
-            }, {
-              expand: true, cwd: 'bower_components/tinymce/skins/lightgray/fonts/', src: 'tinymce*', dest: bundleOptions.path,
-              rename: function(dest, src) { return dest + name + '-tinymce-font-' + src; }
-            }, {
-              expand: true, cwd: 'bower_components/tinymce/skins/lightgray/img/', src: '*', dest: bundleOptions.path,
-              rename: function(dest, src) { return dest + name + '-tinymce-img-' + src; }
-            }, {
-              expand: true, cwd: 'bower_components/tinymce/skins/lightgray/', src: 'content.min.css', dest: bundleOptions.path,
-              rename: function(dest, src) { return dest + name + '-tinymce-' + src; }
-            }, {
-              expand: true, cwd: 'bower_components/jqtree/', src: 'jqtree-circle.png', dest: bundleOptions.path,
-              rename: function(dest, src) { return dest + name + '-jqtree-' + src; }
-            }, {
-              expand: true, cwd: 'bower_components/select2/', src: 'select2*.png', dest: bundleOptions.path,
-              rename: function(dest, src) { return dest + name + '-select2-' + src; }
-            }, {
-              expand: true, cwd: 'bower_components/select2/', src: 'select2*.gif', dest: bundleOptions.path,
-              rename: function(dest, src) { return dest + name + '-select2-' + src; }
-            }, {
-              expand: true, cwd: 'bower_components/dropzone/downloads/images/', src: 'spritemap*', dest: bundleOptions.path,
-              rename: function(dest, src) { return dest + name + '-dropzone-' + src; }
             }
           ]);
         }
