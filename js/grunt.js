@@ -1,4 +1,4 @@
-/* globals module:true,process:true */
+/* global module:true, process:true */
 
 (function() {
   'use strict';

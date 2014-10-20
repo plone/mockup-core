@@ -61,6 +61,13 @@ All issues about Mockup_ related projects are tracked at:
 https://github.com/plone/mockup/issues
 
 
+License
+=======
+
+The MIT License (MIT). Copyrights hold the Plone Foundation.
+See `LICENSE.rst <LICENSE.rst>`_ for details.
+
+
 Credits
 =======
 
@@ -96,6 +103,10 @@ Changelog
 
 v1.2.12 - unreleased
 --------------------
+
+* Remove licensing and author information from source files.
+  Refs https://github.com/plone/mockup/issues/422  
+  [thet]
 
 * Fix more TinyMCE related paths.
   [thet]
