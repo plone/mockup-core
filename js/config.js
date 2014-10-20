@@ -1,3 +1,6 @@
+/* RequireJS configuration
+ */
+
 /* globals module:true */
 
 (function() {
