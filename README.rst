@@ -104,6 +104,10 @@ Changelog
 v1.2.12 - unreleased
 --------------------
 
+* Don't include Configuration and License section in docs, if they aren't
+  defined.
+  [thet]
+
 * Fix Makefile for node versions < and >= 0.11.x.
   [petschki, thet]
 

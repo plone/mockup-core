@@ -48,6 +48,21 @@ define([
       expect($('.mockup-pattern-configuration > table > tbody > tr', this.$root).size()).to.be(2);
     });
 
+    it('doesn\'t display options or license, if they are not defined', function() {
+      var pattern = new Pattern();
+      React.renderComponent(pattern, this.$root[0]);
+      expect($('.mockup-pattern', this.$root).size()).to.be(1);
+      expect($('.mockup-pattern', this.$root).html()).to.be('');
+      pattern.setState({
+        pattern: {
+          documentation: '<p>this is documentation</p>',
+        }
+      });
+      expect($('.mockup-pattern-documentation', this.$root).html().toLowerCase()).to.be('<p>this is documentation</p>');
+      expect($('.mockup-pattern-license', this.$root).length).to.be(0);
+      expect($('.mockup-pattern-configuration', this.$root).length).to.be(0);
+    });
+
     it('parses first comment of pattern script', function() {
       var pattern = Pattern.componentConstructor.prototype.parsePattern('' +
         '/* Toggle pattern.\n' +

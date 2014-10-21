@@ -45,7 +45,7 @@
   },
   "bugs": {
     "url": "https://github.com/plone/mockup/issues",
-    "email": "plone-developers@lists.sourceforge.net",
+    "email": "plone-developers@lists.sourceforge.net"
   },
   "licenses": [
     {
