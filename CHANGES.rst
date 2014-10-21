@@ -1,13 +1,11 @@
-Cleanup: Remove unused ``*._develop.js`` bundles. Remove unused bundles
-  ``toolbar`` and ``tiles``. Remove unused bower dependencies ``domready``,
-  ``respond`` and ``html5shiv``.
-
-
 Changelog
 =========
 
 v1.2.12 - unreleased
 --------------------
+
+* Bower updates, except reactjs.
+  [thet]
 
 * Cleanup: Remove uglifying config for ``*._develop.js`` files - they are not
   used anymore. Move all NixOS plattform specific ``*.nix`` config files to a
