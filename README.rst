@@ -104,8 +104,11 @@ Changelog
 v1.2.12 - unreleased
 --------------------
 
+* Fix Makefile for node versions < and >= 0.11.x.
+  [petschki, thet]
+
 * Remove licensing and author information from source files.
-  Refs https://github.com/plone/mockup/issues/422  
+  Refs https://github.com/plone/mockup/issues/422
   [thet]
 
 * Fix more TinyMCE related paths.
