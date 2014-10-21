@@ -48,12 +48,6 @@
           this.gruntConfig.uglify[name].files[bundleOptions.path + name + '.min.js'] = [
             'build/' + name + '.js'
           ];
-          this.gruntConfig.uglify[name].files[bundleOptions.path + name + '.dev.js'] = [
-            'bower_components/domready/ready.js',
-            'node_modules/requirejs/require.js' ,
-            'bower_components/jquery/jquery.js',
-            'js/bundles/' + name + '_develop.js'
-          ];
         }
       },
       less: {
