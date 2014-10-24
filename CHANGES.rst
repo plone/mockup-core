@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v1.2.12 - unreleased
+v1.2.12 - 2014-10-24
 --------------------
 
 * Bower updates, except reactjs.
