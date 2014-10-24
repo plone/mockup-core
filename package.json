@@ -1,6 +1,6 @@
 {
   "name": "mockup-core",
-  "version": "1.2.12",
+  "version": "1.2.13-dev",
   "description": "Core library for the Mockup front end library",
   "homepage": "http://plone.github.io/mockup",
   "devDependencies": {
