@@ -24,6 +24,7 @@
       'mockup-docs-navigation': 'js/docs/navigation',
       'mockup-patterns-base': 'js/pattern',
       'mockup-registry': 'js/registry',
+      'mockup-core-utils': 'js/utils',
       'react': 'bower_components/react/react',
       'sinon': 'bower_components/sinonjs/sinon',
       'text': 'bower_components/requirejs-text/text',

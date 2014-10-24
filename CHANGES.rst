@@ -4,7 +4,8 @@ Changelog
 v1.2.13 - unreleased
 --------------------
 
-* Nothing changed yet.
+* Add deepExtend method to be used instead of jQuery.extend in grunt.
+  [thet]
 
 
 v1.2.12 - 2014-10-24
