@@ -4,7 +4,9 @@ Changelog
 v1.2.13 - unreleased
 --------------------
 
-* Nothing changed yet.
+- Add a `less/docs.less` file (from `mockup`), which other projects can depend
+  on, without copying it over.
+  [thet]
 
 
 v1.2.12 - 2014-10-24
