@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v1.2.13 - unreleased
+v1.2.13 - 2014-10-28
 --------------------
 
 - Add a `less/docs.less` file (from `mockup`), which other projects can depend
