@@ -4,7 +4,11 @@ Changelog
 v1.2.14 - unreleased
 --------------------
 
-- Nothing changed yet.
+- Trigger the event 'scan-completed.registry.mockup-core' on document after the
+  DOM pattern scan was completed and all patterns were initialized. This way,
+  we can register event subscribers, which rely on the DOM manipulations by
+  other patterns.
+  [thet]
 
 
 v1.2.13 - 2014-10-28

@@ -2,9 +2,10 @@
 
 define([
   'expect',
+  'sinon',
   'jquery',
   'mockup-registry'
-], function(expect, $, Registry) {
+], function(expect, sinon, $, Registry) {
   'use strict';
 
   window.mocha.setup('bdd');
@@ -100,6 +101,15 @@ define([
       };
       Registry.scan($el);
       expect($el.data('pattern-example').example).to.be.equal('works');
+    });
+
+    it('trigger event on completed scan', function () {
+      var spy = sinon.spy();
+      // register spy as event listener
+      $(document).on('scan-completed.registry.mockup-core', spy);
+      var $el = $('<div />');
+      Registry.scan($el);
+      expect(spy.called).to.be(true);  // spy must be called
     });
 
     it('try register a pattern without name', function() {
