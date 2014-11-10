@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v1.2.14 - unreleased
+v1.2.14 - 2014-11-10
 --------------------
 
 - Trigger the event 'scan-completed.registry.mockup-core' on document after the
