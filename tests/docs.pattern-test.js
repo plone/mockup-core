@@ -1,12 +1,9 @@
 define([
   'jquery',
-  'underscore',
   'expect',
-  'sinon',
   'react',
-  'mockup-registry',
   'mockup-docs-pattern'
-], function($, _, expect, sinon, React, Registry, Pattern) {
+], function($, expect, React, Pattern) {
   'use strict';
 
   window.mocha.setup('bdd');
