@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v1.2.15 - unreleased
+--------------------
+
+- Add CSS resource map and rename the JavaScript one.
+  [thet]
+
+
 v1.2.14 - 2014-11-10
 --------------------
 

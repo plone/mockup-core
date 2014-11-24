@@ -43,7 +43,8 @@
           this.gruntConfig.uglify[name].files = this.gruntConfig.uglify[name].files || {};
           this.gruntConfig.uglify[name].options = {
             mangle: false,
-            sourceMap: true
+            sourceMap: true,
+            sourceMapName: bundleOptions.path + name + '.min.js.map'
           };
           this.gruntConfig.uglify[name].files[bundleOptions.path + name + '.min.js'] = [
             'build/' + name + '.js'
@@ -58,7 +59,10 @@
           gruntConfig.less[name] = gruntConfig.less[name] || {};
           gruntConfig.less[name].files = gruntConfig.less[name].files || {};
           gruntConfig.less[name].files[bundleOptions.path + name + '.min.css'] = 'less/' + name + '.less';
-
+          gruntConfig.less[name].options = {
+            sourceMap: true,
+            sourceMapFilename: bundleOptions.path + name + '.min.css.map'
+          };
 
           gruntConfig.watch = gruntConfig.watch || {};
           gruntConfig.watch['less-' + name] = gruntConfig.watch['less-' + name] || {
