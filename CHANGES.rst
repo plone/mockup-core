@@ -4,6 +4,9 @@ Changelog
 v1.2.15 - unreleased
 --------------------
 
+- Move TinyMCE sed and copy task configuration over to Mockup.
+  [thet]
+
 - Add CSS resource map and rename the JavaScript one.
   [thet]
 
