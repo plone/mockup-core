@@ -117,6 +117,18 @@
       sed: {
         registerBundle: function(name, customGruntConfig, bundleOptions, sections) {
           this.gruntConfig.sed = this.gruntConfig.sed || {};
+          // source maps
+          this.gruntConfig.sed[name + '.min.css.map'] = {
+            path: bundleOptions.path + name + '.min.css',
+            pattern: 'sourceMappingURL=' + bundleOptions.path + name + '.min.css.map',
+            replacement: 'sourceMappingURL=' + bundleOptions.url + '.min.css.map',
+          };
+          this.gruntConfig.sed[name + '.min.js.map'] = {
+            path: bundleOptions.path + name + '.min.js',
+            pattern: 'sourceMappingURL=' + name + '.min.js.map',
+            replacement: 'sourceMappingURL=' + bundleOptions.url + '.min.js.map',
+          };
+          // pattern resources
           this.gruntConfig.sed[name + '-bootstrap-glyphicons'] = {
             path: bundleOptions.path + name + '.min.css',
             pattern: 'url\\(\'../bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular',
@@ -236,7 +248,7 @@
        */
       bundleOptions = extend(true, {
         path: 'build/',
-        url: ' ++resource++plone.app.' + name,
+        url: '++resource++plone.app.' + name,
         insertExtraRequires: []
       }, bundleOptions || {});
 
