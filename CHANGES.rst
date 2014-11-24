@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v1.2.15 - unreleased
+v1.2.15 - 2014-11-24
 --------------------
 
 - Move TinyMCE sed and copy task configuration over to Mockup.
