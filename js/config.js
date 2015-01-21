@@ -23,7 +23,7 @@
       'mockup-docs-view': 'js/docs/view',
       'mockup-docs-navigation': 'js/docs/navigation',
       'mockup-patterns-base': 'js/pattern',
-      'mockup-registry': 'js/registry',
+      'pat-registry': 'bower_components/patternslib/src/core/registry',
       'react': 'bower_components/react/react',
       'sinon': 'bower_components/sinonjs/sinon',
       'text': 'bower_components/requirejs-text/text',

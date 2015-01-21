@@ -4,7 +4,7 @@
 
 define([
   'jquery',
-  'mockup-registry'
+  'pat-registry'
 ], function($, Registry) {
   'use strict';
 
@@ -46,6 +46,8 @@ define([
 
     Constructor.__super__ = Base.prototype;  // TODO: needed?
 
+    // FIXME: shitty hack but we need a way to identify Mockup patterns.
+    Constructor.pattern_type = 'mockup';
     Registry.register(Constructor);
 
     return Constructor;
