@@ -43,7 +43,7 @@ define([
     Surrogate.prototype = Base.prototype;
     Constructor.prototype = new Surrogate();
     Constructor.extend = Base.extend;
-    Constructor.init = function initMockup($el, name, options) {
+    Constructor.init = function initMockup($el, name, trigger, options) {
       name = name || this.prototype.name;
       var log = logger.getLogger("pat." + name);
       var pattern = $el.data('pattern-' + name);
