@@ -59,10 +59,11 @@ define([
     Surrogate.prototype = Base.prototype;
     Constructor.prototype = new Surrogate();
     Constructor.extend = Base.extend;
+    Constructor.jquery_plugin = true;
     Constructor.init = initMockup;
     $.extend(true, Constructor.prototype, NewPattern);
     Constructor.__super__ = Base.prototype;  // TODO: needed?
-    Registry.register(Constructor);
+    Registry.register(Constructor, NewPattern.name);
     return Constructor;
   };
 
