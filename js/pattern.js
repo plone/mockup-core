@@ -1,13 +1,28 @@
 /* Base Pattern
  */
 
-
 define([
   'jquery',
   'pat-registry',
+  'mockup-parser',
   "pat-logger"
-], function($, Registry, logger) {
+], function($, Registry, mockupParser, logger) {
   'use strict';
+
+  var initMockup = function initMockup($el, options, trigger) {
+    var name = this.prototype.name;
+    var log = logger.getLogger("pat." + name);
+    var pattern = $el.data('pattern-' + name);
+    if (pattern === undefined && Registry.patterns[name]) {
+      try {
+          pattern = new Registry.patterns[name]($el, mockupParser.getOptions($el, name, options));
+      } catch (e) {
+          log.error('Failed while initializing "' + name + '" pattern.');
+      }
+      $el.data('pattern-' + name, pattern);
+    }
+    return pattern;
+  };
 
   // Base Pattern
   var Base = function($el, options) {
@@ -23,6 +38,7 @@ define([
     on: function(eventName, eventCallback) {
       this.$el.on(eventName + '.' + this.name + '.patterns', eventCallback);
     },
+
     emit: function(eventName, args) {
       // args should be a list
       if (args === undefined) {
@@ -43,20 +59,7 @@ define([
     Surrogate.prototype = Base.prototype;
     Constructor.prototype = new Surrogate();
     Constructor.extend = Base.extend;
-    Constructor.init = function initMockup($el, name, trigger, options) {
-      name = name || this.prototype.name;
-      var log = logger.getLogger("pat." + name);
-      var pattern = $el.data('pattern-' + name);
-      if (pattern === undefined && Registry.patterns[name]) {
-        try {
-            pattern = new Registry.patterns[name]($el, Registry.getOptions($el, name, options));
-        } catch (e) {
-            log.error('Failed while initializing "' + name + '" pattern.');
-        }
-        $el.data('pattern-' + name, pattern);
-      }
-      return pattern;
-    };
+    Constructor.init = initMockup;
     $.extend(true, Constructor.prototype, NewPattern);
     Constructor.__super__ = Base.prototype;  // TODO: needed?
     Registry.register(Constructor);
