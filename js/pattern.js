@@ -60,6 +60,7 @@ define([
     Constructor.prototype = new Surrogate();
     Constructor.extend = Base.extend;
     Constructor.jquery_plugin = true;
+    Constructor.trigger = NewPattern.trigger;
     Constructor.init = initMockup;
     $.extend(true, Constructor.prototype, NewPattern);
     Constructor.__super__ = Base.prototype;  // TODO: needed?
