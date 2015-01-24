@@ -1,11 +1,11 @@
 Changelog
 =========
 
-v1.2.16 - unreleased
+v1.2.16 - 2015-01-24
 --------------------
 
-- Nothing changed yet.
-  [thet]
+- upgrade sauce karma package
+  [vangheem]
 
 
 v1.2.15 - 2014-11-24
