@@ -33,12 +33,10 @@ define([
   };
 
   Base.prototype = {
-    is_mockup_pattern: true,
     constructor: Base,
     on: function(eventName, eventCallback) {
       this.$el.on(eventName + '.' + this.name + '.patterns', eventCallback);
     },
-
     emit: function(eventName, args) {
       // args should be a list
       if (args === undefined) {
@@ -48,24 +46,56 @@ define([
     }
   };
 
-  Base.extend = function(NewPattern) {
-    var Base = this, Constructor;
-    if (NewPattern && NewPattern.hasOwnProperty('constructor')) {
-      Constructor = NewPattern.constructor;
-    } else {
-      Constructor = function() { Base.apply(this, arguments); };  // TODO: arguments from where
+  Base.extend = function(patternProps) {
+    /* Helper function to correctly set up the prototype chain for new patterns.
+     */
+    var parent = this;
+    var child;
+
+    // Check that the required configuration properties are given.
+    if (!patternProps) {
+      throw new Error("Pattern configuration properties required when calling Base.extend");
     }
-    var Surrogate = function() { this.constructor = Constructor; };
-    Surrogate.prototype = Base.prototype;
-    Constructor.prototype = new Surrogate();
-    Constructor.extend = Base.extend;
-    Constructor.jquery_plugin = true;
-    Constructor.trigger = NewPattern.trigger;
-    Constructor.init = initMockup;
-    $.extend(true, Constructor.prototype, NewPattern);
-    Constructor.__super__ = Base.prototype;  // TODO: needed?
-    Registry.register(Constructor, NewPattern.name);
-    return Constructor;
+    if (!patternProps.name) {
+      throw new Error("A Mockup pattern must have a name attribute");
+    }
+    if (!patternProps.trigger) {
+      throw new Error("The Mockup pattern '"+patternProps.name+"' must have a trigger attribute");
+    }
+
+    // The constructor function for the new subclass is either defined by you
+    // (the "constructor" property in your `extend` definition), or defaulted
+    // by us to simply call the parent's constructor.
+    if (patternProps.hasOwnProperty('constructor')) {
+      child = patternProps.constructor;
+    } else {
+      child = function() { parent.apply(this, arguments); };
+    }
+
+    // Allow patterns to be extended indefinitely
+    child.extend = Base.extend;
+
+    // Static properties required by the Patternslib registry 
+    child.init = initMockup;
+    child.jquery_plugin = true;
+    child.trigger = patternProps.trigger;
+
+    // Set the prototype chain to inherit from `parent`, without calling
+    // `parent`'s constructor function.
+    var Surrogate = function() { this.constructor = child; };
+    Surrogate.prototype = parent.prototype;
+    child.prototype = new Surrogate();
+
+    // Add pattern's configuration properties (instance properties) to the subclass,
+    $.extend(true, child.prototype, patternProps);
+
+    // Set a convenience property in case the parent's prototype is needed
+    // later.
+    child.__super__ = parent.prototype;
+
+    // Register the pattern in the Patternslib registry.
+    Registry.register(child, patternProps.name);
+    return child;
   };
 
   return Base;
