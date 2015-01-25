@@ -14,7 +14,7 @@ define([
     beforeEach(function() {
       this.jqueryPatterns = {};
       $.each(Registry.patterns, $.proxy(function(patternName) {
-        this.jqueryPatterns[Registry.patterns[patternName].prototype.jqueryPlugin] = 
+        this.jqueryPatterns[Registry.patterns[patternName].prototype.jqueryPlugin] =
             $.fn[Registry.patterns[patternName].prototype.jqueryPlugin];
 
         $.fn[Registry.patterns[patternName].prototype.jqueryPlugin] = undefined;
