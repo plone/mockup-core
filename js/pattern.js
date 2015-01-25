@@ -8,6 +8,7 @@ define([
   "pat-logger"
 ], function($, Registry, mockupParser, logger) {
   'use strict';
+  var log = logger.getLogger("Mockup Base");
 
   var initMockup = function initMockup($el, options, trigger) {
     var name = this.prototype.name;
@@ -56,12 +57,6 @@ define([
     if (!patternProps) {
       throw new Error("Pattern configuration properties required when calling Base.extend");
     }
-    if (!patternProps.name) {
-      throw new Error("A Mockup pattern must have a name attribute");
-    }
-    if (!patternProps.trigger) {
-      throw new Error("The Mockup pattern '"+patternProps.name+"' must have a trigger attribute");
-    }
 
     // The constructor function for the new subclass is either defined by you
     // (the "constructor" property in your `extend` definition), or defaulted
@@ -94,9 +89,14 @@ define([
     child.__super__ = parent.prototype;
 
     // Register the pattern in the Patternslib registry.
-    Registry.register(child, patternProps.name);
+    if (!patternProps.name) {
+      log.warn("This mockup pattern without a name attribute will not be registered!");
+    } else if (!patternProps.trigger) {
+      log.warn("The mockup pattern '"+patternProps.name+"' does not have a trigger attribute, it will not be registered.");
+    } else {
+      Registry.register(child, patternProps.name);
+    }
     return child;
   };
-
   return Base;
 });

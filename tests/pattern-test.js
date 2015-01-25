@@ -70,6 +70,30 @@ define([
       Registry.register = originalRegister;
     });
 
+    it('will not automatically register a pattern without a "name" attribute', function() {
+      var registerSpy = sinon.spy();
+      var originalRegister = Registry.register;
+      Registry.register = function (pattern, name) {
+        registerSpy();
+        originalRegister(pattern, name);
+      };
+      var NewPattern = Base.extend({trigger: '.pat-example'});
+      expect(registerSpy.called).to.be.equal(false);
+      Registry.register = originalRegister;
+    });
+
+    it('will not automatically register a pattern without a "trigger" attribute', function() {
+      var registerSpy = sinon.spy();
+      var originalRegister = Registry.register;
+      Registry.register = function (pattern, name) {
+        registerSpy();
+        originalRegister(pattern, name);
+      };
+      var NewPattern = Base.extend({name: 'example'});
+      expect(registerSpy.called).to.be.equal(false);
+      Registry.register = originalRegister;
+    });
+
     it('will instantiate new instances of a pattern when the DOM is scanned', function(done) {
       var NewPattern = Base.extend({
         name: 'example',
@@ -84,14 +108,6 @@ define([
 
     it('requires that patterns that extend it provide an object of properties', function() {
       expect(Base.extend.bind(Base, {})).should.assert("Pattern configuration properties required when calling Base.extend");
-    });
-
-    it('requires that patterns that extend it provide a "name" attribute', function() {
-      expect(Base.extend.bind(Base, {})).should.assert("A Mockup pattern must have a name attribute");
-    });
-
-    it('requires that patterns that extend it provide a "trigger" attribute', function() {
-      expect(Base.extend.bind(Base, {name: 'example'})).should.assert("The Mockup pattern 'example' must have a trigger attribute");
     });
 
     it('can be extended multiple times', function(done) {
