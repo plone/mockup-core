@@ -282,7 +282,7 @@
         karma: {
           options: {
             basePath: './',
-            frameworks: [],
+            frameworks: ['mocha', 'chai'],
             files: this.files,
             preprocessors: { 'js/**/*.js': 'coverage' },
             reporters: ['dots', 'progress', 'coverage', 'spec'],
@@ -296,6 +296,7 @@
             captureTimeout: 60000,
             plugins: [
               'karma-mocha',
+              'karma-chai',
               'karma-coverage',
               'karma-requirejs',
               'karma-sauce-launcher',
@@ -319,6 +320,7 @@
             reporters: ['dots', 'progress'],
             plugins: [
               'karma-mocha',
+              'karma-chai',
               'karma-requirejs',
               'karma-chrome-launcher'
             ]
@@ -328,6 +330,7 @@
             reporters: ['dots', 'progress'],
             plugins: [
               'karma-mocha',
+              'karma-chai',
               'karma-requirejs'
             ]
           },
