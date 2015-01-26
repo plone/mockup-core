@@ -1,11 +1,23 @@
 Changelog
 =========
 
+v2.0.0 - unreleased
+-------------------
+
+- Patternslib merge: Removed the Mockup registry in favor of Patternslib's.
+  This allows us to: Use Patternslib patterns with Mockup/Plone and use Mockup
+  patterns with Patternslib outside of Plone. Refs: #25
+  [jcbrand]
+
+
 v1.2.16 - 2015-01-24
 --------------------
 
 - upgrade sauce karma package
   [vangheem]
+
+- Relicensing from MIT to BSD. Refs #24
+  [thet]
 
 
 v1.2.15 - 2014-11-24
