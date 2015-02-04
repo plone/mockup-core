@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v2.0.0 - unreleased
+v2.0.0 - 2015-02-04
 -------------------
 
 - Patternslib merge: Removed the Mockup registry in favor of Patternslib's.
