@@ -25,6 +25,8 @@ define([
     "pat-compat",
     "pat-jquery-ext"
 ], function($, logger, utils) {
+    'use strict';
+
     var log = logger.getLogger("registry");
 
     var disable_re = /patterns-disable=([^&]+)/g,
@@ -111,7 +113,7 @@ define([
                                 if (dont_catch) { throw(e); }
                                 plog.error("Caught error:", e);
                             }
-                            $el.addClass('pattern-initialized')
+                            $el.addClass('pattern-initialized');
                         }
                     }
                 }
