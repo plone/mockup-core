@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v2.1.0 - 2015-02-10
+-------------------
+
+- Fork patternslib registry to work with mockup's use-case a bit better.
+  See https://github.com/Patternslib/Patterns/issues/396
+  [vangheem]
+
+
 v2.0.0 - 2015-02-04
 -------------------
 
