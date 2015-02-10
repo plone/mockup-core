@@ -44,22 +44,27 @@ define([
         log.info('I will not catch init exceptions');
     }
 
-    if(window.registered_patterns === undefined){
-      window.registered_patterns = {};
+    if(window.registry_settings === undefined){
+        /* use global settings in case mockup-registry is included by
+           multiple compiled sources. Makes this a global registry */
+        window.registry_settings = {
+            patterns: {},
+            initialized: false
+        };
     }
 
     var registry = {
-        patterns: window.registered_patterns,
+        settings: window.registry_settings,
+        patterns: window.registry_settings.patterns,
         // as long as the registry is not initialized, pattern
         // registration just registers a pattern. Once init is called,
         // the DOM is scanned. After that registering a new pattern
         // results in rescanning the DOM only for this pattern.
-        initialized: false,
         init: function registry_init() {
             $(document).ready(function() {
                 log.info('loaded: ' + Object.keys(registry.patterns).sort().join(', '));
                 registry.scan(document.body);
-                registry.initialized = true;
+                registry.settings.initialized = true;
                 log.info('finished initial scan.');
             });
         },
@@ -147,7 +152,7 @@ define([
                 $.fn[plugin_name.replace(/^pat/, "pattern")] = utils.jqueryPlugin(pattern);
             }
             log.debug("Registered pattern:", name, pattern);
-            if (registry.initialized) {
+            if (registry.settings.initialized) {
                 registry.scan(document.body, [name]);
             }
             return true;
