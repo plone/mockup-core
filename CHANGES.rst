@@ -1,6 +1,14 @@
 Changelog
 =========
 
+
+v2.1.1 - 2015-02-10
+-------------------
+
+- fix initialize of pattern to be global also
+  [vangheem]
+
+
 v2.1.0 - 2015-02-10
 -------------------
 
