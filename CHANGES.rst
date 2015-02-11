@@ -1,11 +1,11 @@
 Changelog
 =========
 
-v2.1.2 - 2015-02-11
+v2.1.3 - 2015-02-11
 -------------------
 
 - go back to patternslib registry
-  [vangheem]
+  [jcbrand]
 
 v2.1.1 - 2015-02-10
 -------------------
