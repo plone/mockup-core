@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v2.1.2 - 2015-02-11
+-------------------
+
+- go back to patternslib registry
+  [vangheem]
 
 v2.1.1 - 2015-02-10
 -------------------
