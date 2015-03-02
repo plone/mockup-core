@@ -1,8 +1,7 @@
 Changelog
 =========
 
-
-v2.1.4 - unreleased
+v2.1.4 - 2015-03-03
 -------------------
 
 - Bring back TinyMCE ``sed`` and ``copy`` from ``mockup`` into ``mockup-core``.
