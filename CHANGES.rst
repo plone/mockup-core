@@ -4,7 +4,8 @@ Changelog
 v2.1.5 - unreleased
 -------------------
 
-- Nothing changed yet.
+- Fix tinymce-fonts sed task matching urls with and without single quotes
+  [petschki]
 
 
 v2.1.4 - 2015-03-03

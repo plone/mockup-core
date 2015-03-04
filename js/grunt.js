@@ -135,10 +135,8 @@
           // TINYMCE
           this.gruntConfig.sed[name + '-tinymce-fonts'] = {
             path: bundleOptions.path + name + '.min.css',
-            pattern: 'url\\(fonts/tinymce',
-            replacement: 'url(' + bundleOptions.url + '-tinymce-font-tinymce'
-            //pattern: 'url\\(\'?fonts/tinymce(.*)\'?',  // match urls with and without quotes
-            //replacement: 'url(\'' + bundleOptions.url + '-tinymce-font-tinymce$1\''
+            pattern: 'url\\((\'?)fonts/tinymce',  // match urls with and without quotes
+            replacement: 'url($1' + bundleOptions.url + '-tinymce-font-tinymce'
           };
           this.gruntConfig.sed[name + '-tinymce-img-loader'] = {
             path: bundleOptions.path + name + '.min.css',
