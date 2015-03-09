@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v2.1.5 - unreleased
+v2.1.5 - 2015-03-09
 -------------------
 
 - Enable a way to bypass the mockup parser. Useful when using the Base pattern
