@@ -4,6 +4,10 @@ Changelog
 v2.1.5 - unreleased
 -------------------
 
+- Enable a way to bypass the mockup parser. Useful when using the Base pattern
+  with the Patternslib parser.
+  [jcbrand]
+
 - Fix tinymce-fonts sed task matching urls with and without single quotes
   [petschki]
 
