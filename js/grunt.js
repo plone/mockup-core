@@ -156,8 +156,8 @@
           // TINYMCE content.min
           this.gruntConfig.sed[name + '-tinymce-fonts2'] = {
             path: bundleOptions.path + name + '-tinymce-content.min.css',
-            pattern: 'url\\(fonts/tinymce',
-            replacement: 'url(' + bundleOptions.url + '-tinymce-font-tinymce'
+            pattern: 'url\\((\'?)fonts/tinymce',  // match urls with and without quotes
+            replacement: 'url($1' + bundleOptions.url + '-tinymce-font-tinymce'
           };
           this.gruntConfig.sed[name + '-tinymce-img-loader2'] = {
             path: bundleOptions.path + name + '-tinymce-content.min.css',
@@ -178,7 +178,7 @@
           this.gruntConfig.sed[name + '-dropzone-spritemap'] = {
             path: bundleOptions.path + name + '.min.css',
             pattern: 'url\\("../images/spritemap',
-            replacement: 'url(\'' + bundleOptions.url + '-dropzone-spritemap'
+            replacement: 'url("' + bundleOptions.url + '-dropzone-spritemap'
           };
           // SELECT2
           this.gruntConfig.sed[name + '-select2-images'] = {
