@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v2.1.5 - unreleased
+v2.1.6 - unreleased
 -------------------
 
 - Nothing changed yet.
