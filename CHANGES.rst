@@ -4,7 +4,9 @@ Changelog
 v2.1.6 - unreleased
 -------------------
 
-- Nothing changed yet.
+- Replace TinyMCE's default content.min.css with one, that can be found by
+  builded bundles.
+  [thet]
 
 
 v2.1.5 - 2015-03-09

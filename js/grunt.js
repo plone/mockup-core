@@ -154,6 +154,13 @@
             replacement: 'url(\'' + bundleOptions.url + '-tinymce-img-object.gif\''
           };
           // TINYMCE content.min
+          this.gruntConfig.sed[name + '-tinymce-content.min.css'] = {
+            // replace default content.min.css
+            path: bundleOptions.path,
+            recursive: true,
+            pattern: '../../../bower_components/tinymce-builded/js/tinymce/skins/lightgray/content.min.css',
+            replacement: bundleOptions.url + '-tinymce-content.min.css'
+          };
           this.gruntConfig.sed[name + '-tinymce-fonts2'] = {
             path: bundleOptions.path + name + '-tinymce-content.min.css',
             pattern: 'url\\((\'?)fonts/tinymce',  // match urls with and without quotes
