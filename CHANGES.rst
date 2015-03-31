@@ -4,6 +4,9 @@ Changelog
 v2.1.6 - unreleased
 -------------------
 
+- Don't swallow errors, when ``window.DEBUG`` is set to true.
+  [thet]
+
 - Replace TinyMCE's default content.min.css with one, that can be found by
   builded bundles.
   [thet]
