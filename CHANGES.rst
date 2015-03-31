@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v2.1.6 - unreleased
+v2.1.6 - 2015-03-31
 -------------------
 
 - Don't swallow errors, when ``window.DEBUG`` is set to true.
