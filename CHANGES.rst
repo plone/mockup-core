@@ -1,10 +1,10 @@
 Changelog
 =========
 
-v2.1.7 - unreleased
+v2.1.7 - 2015-04-01
 -------------------
 
-- Nothing changed yet.
+- upgrade to patternslib 2.0.9 to fix install error
 
 
 v2.1.6 - 2015-03-31
