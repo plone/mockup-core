@@ -105,9 +105,6 @@
               rename: function(dest, src) { return dest + name + '-select2-' + src; }},
             { expand: true, cwd: 'bower_components/select2/', src: 'select2*.gif', dest: bundleOptions.path,
               rename: function(dest, src) { return dest + name + '-select2-' + src; }},
-            // DROPZONE
-            { expand: true, cwd: 'bower_components/dropzone/downloads/images/', src: 'spritemap*', dest: bundleOptions.path,
-              rename: function(dest, src) { return dest + name + '-dropzone-' + src; }}
           ]);
         }
       },
@@ -180,12 +177,6 @@
             path: bundleOptions.path + name + '-tinymce-content.min.css',
             pattern: 'url\\(\'?img/object.gif\'?',
             replacement: 'url(\'' + bundleOptions.url + '-tinymce-img-object.gif\''
-          };
-          // DROPZONE
-          this.gruntConfig.sed[name + '-dropzone-spritemap'] = {
-            path: bundleOptions.path + name + '.min.css',
-            pattern: 'url\\("../images/spritemap',
-            replacement: 'url("' + bundleOptions.url + '-dropzone-spritemap'
           };
           // SELECT2
           this.gruntConfig.sed[name + '-select2-images'] = {

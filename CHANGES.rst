@@ -1,10 +1,18 @@
 Changelog
 =========
 
+v2.1.8 - unreleased
+-------------------
+
+- Remove Dropzone sed and copy parts. New Dropzone doesn't use these resources.
+  [thet]
+
+
 v2.1.7 - 2015-04-01
 -------------------
 
-- upgrade to patternslib 2.0.9 to fix install error
+- Upgrade to patternslib 2.0.9 to fix install error.
+  [vangheem]
 
 
 v2.1.6 - 2015-03-31
