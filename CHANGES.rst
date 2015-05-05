@@ -4,6 +4,9 @@ Changelog
 v2.1.8 - unreleased
 -------------------
 
+- Update Bootstrap to 3.3.4.
+  [thet]
+
 - Remove Dropzone sed and copy parts. New Dropzone doesn't use these resources.
   [thet]
 
