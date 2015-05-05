@@ -4,6 +4,9 @@ Changelog
 v2.1.8 - unreleased
 -------------------
 
+- Update to jQuery 1.11.2.
+  [thet]
+
 - Update Bootstrap to 3.3.4.
   [thet]
 
