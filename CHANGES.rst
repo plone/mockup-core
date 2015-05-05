@@ -4,6 +4,9 @@ Changelog
 v2.1.8 - unreleased
 -------------------
 
+- Update more framework dependencies.
+  [thet]
+
 - Update to jQuery 1.11.2.
   [thet]
 
