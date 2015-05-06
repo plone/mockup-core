@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v2.1.8 - unreleased
+v2.1.8 - 2015-05-05
 -------------------
 
 - Update more framework dependencies.
