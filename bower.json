@@ -10,7 +10,7 @@
     "lodash": "2.4.1",
     "marked": "0.3.3",
     "patternslib": "2.0.9",
-    "react": "0.10.0",
+    "react": "0.13.3",
     "requirejs-text": "2.0.12",
     "selectivizr": "1.0.2"
   },
