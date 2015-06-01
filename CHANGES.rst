@@ -1,8 +1,11 @@
 Changelog
 =========
 
-v2.1.9 - Unreleased
+v2.1.9 - 2015-05-31
 -------------------
+
+- Add karma config to run tests on Jenkins
+  [gforcada]
 
 - Update to jQuery 1.11.3.
   [thet]
