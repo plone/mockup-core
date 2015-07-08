@@ -1,6 +1,12 @@
 Changelog
 =========
 
+v2.1.10 - unreleased
+--------------------
+
+- always log exception on pattern initialization errors
+  [vangheem]
+
 v2.1.9 - 2015-05-31
 -------------------
 
