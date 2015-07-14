@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v2.1.10 - unreleased
+v2.1.10 - 2015-07-14
 --------------------
 
 - always log exception on pattern initialization errors
