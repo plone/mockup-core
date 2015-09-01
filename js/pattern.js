@@ -48,7 +48,7 @@ define([
     }
 
     this.$el = $el;
-    this.options = this.defaults || {};
+    this.options = $.extend(true, {}, this.defaults || {});
     _recursiveExtend(this.options, options);
     this.init($el, options);
     this.emit('init');
