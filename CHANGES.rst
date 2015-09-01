@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v2.1.11 - unreleased
+--------------------
+
+- Fix overriding default pattern parameters when initializing
+  [frapell]
+
+
 v2.1.10 - 2015-07-14
 --------------------
 
