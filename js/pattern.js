@@ -33,7 +33,7 @@ define([
         for (var p in source){
           if ($.isArray(source[p])){
             obj[p] = source[p];
-          } else if (typeof source[p] === "object" && source[p] !== null){
+          } else if (typeof source[p] === "object" && source[p] !== null && $.isPlainObject(source[p])){
             // This is another dict, so will recurse
             if (!obj.hasOwnProperty(p) || typeof obj[p] !== "object"){
               // Create if not there, or if it is something else
