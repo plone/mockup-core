@@ -6,6 +6,8 @@ v2.1.11 - unreleased
 
 - Fix overriding default pattern parameters when initializing
   [frapell]
+- Change logging statements for pattern missing name or trigger from warn into info
+  [fulv]
 
 
 v2.1.10 - 2015-07-14
