@@ -28,8 +28,28 @@ define([
 
   // Base Pattern
   var Base = function($el, options) {
+    function _recursiveExtend(obj, source){
+      if (typeof source === "object" && source !== null){
+        for (var p in source){
+          if ($.isArray(source[p])){
+            obj[p] = source[p];
+          } else if (typeof source[p] === "object" && source[p] !== null && $.isPlainObject(source[p])){
+            // This is another dict, so will recurse
+            if (!obj.hasOwnProperty(p) || typeof obj[p] !== "object" || obj[p] === null){
+              // Create if not there, or if it is something else
+              obj[p] = {};
+            }
+            _recursiveExtend(obj[p], source[p]);
+          } else {
+            obj[p] = source[p];
+          }
+        }
+      }
+    }
+
     this.$el = $el;
-    this.options = $.extend(true, {}, this.defaults || {}, options || {});
+    this.options = $.extend(true, {}, this.defaults || {});
+    _recursiveExtend(this.options, options);
     this.init($el, options);
     this.emit('init');
   };
