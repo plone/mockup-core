@@ -114,9 +114,9 @@ define([
 
     // Register the pattern in the Patternslib registry.
     if (!patternProps.name) {
-      log.warn("This mockup pattern without a name attribute will not be registered!");
+      log.info("This mockup pattern without a name attribute will not be registered!");
     } else if (!patternProps.trigger) {
-      log.warn("The mockup pattern '"+patternProps.name+"' does not have a trigger attribute, it will not be registered.");
+      log.info("The mockup pattern '"+patternProps.name+"' does not have a trigger attribute, it will not be registered.");
     } else {
       Registry.register(child, patternProps.name);
     }
