@@ -73,14 +73,15 @@ define([
           'val8': null,
           'val9': null,
           'val10': null,
-          'val11': null
+          'val11': null,
+          'val12': 'a'
         },
         init: function() {
           expect(this.$el.hasClass('pat-example')).to.equal(true);
           this.extra();
         },
         extra: function() {
-          expect(Object.keys(this.options).length).to.eql(11);
+          expect(Object.keys(this.options).length).to.eql(13);
           expect(this.options.val1).to.eql('value');
           expect(this.options.val2).to.eql('default');
           expect(Object.keys(this.options.val3).length).to.eql(5);
@@ -99,10 +100,12 @@ define([
           expect(Object.keys(this.options.val10).length).to.eql(1);
           expect(this.options.val10.child1).to.eql('value');
           expect(this.options.val11).to.be(null);
+          expect(this.options.val12).to.be(null);
+          expect(this.options.val13).to.be(null);
           done();
         }
       });
-      var tmp = new Tmp($('<div class="pat-example"/>'), {'val1': 'value', 'val3': {'child1': 'value', 'child3':['4'], 'child5':{'sub1': 'a'}}, 'val4': ['d'], 'val6': ['b', 'c'], 'val7': 'b', 'val8': 'e', 'val9': ['f'], 'val10': {'child1': 'value'} });
+      var tmp = new Tmp($('<div class="pat-example"/>'), {'val1': 'value', 'val3': {'child1': 'value', 'child3':['4'], 'child5':{'sub1': 'a'}}, 'val4': ['d'], 'val6': ['b', 'c'], 'val7': 'b', 'val8': 'e', 'val9': ['f'], 'val10': {'child1': 'value'}, 'val12': null, 'val13': null });
     });
 
     it('will automatically register a pattern in the Patternslib registry when extended', function() {
