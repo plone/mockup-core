@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v2.1.11 - unreleased
+v2.1.11 - 2015-09-15
 --------------------
 
 - Fix overriding default pattern parameters when initializing
