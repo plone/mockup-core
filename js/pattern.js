@@ -35,7 +35,7 @@ define([
             obj[p] = source[p];
           } else if (typeof source[p] === "object" && source[p] !== null && $.isPlainObject(source[p])){
             // This is another dict, so will recurse
-            if (!obj.hasOwnProperty(p) || typeof obj[p] !== "object"){
+            if (!obj.hasOwnProperty(p) || typeof obj[p] !== "object" || obj[p] === null){
               // Create if not there, or if it is something else
               obj[p] = {};
             }

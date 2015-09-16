@@ -1,6 +1,19 @@
 Changelog
 =========
 
+v2.1.13 - unreleased
+--------------------
+
+- Fix the recursive override for corner case
+  [frapell]
+
+
+v2.1.12 - 2015-09-15
+--------------------
+
+- revert recursive option override
+  [vangheem]
+
 v2.1.11 - 2015-09-15
 --------------------
 
